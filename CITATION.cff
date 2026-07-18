@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use FAKIR, cite it as below. DOI to be injected post-mint (DOI-PENDING)."
+title: "FAKIR: Foundational Architecture for Knowledge, Intelligence & Reasoning (UKOP kernel)"
+type: software
+authors:
+  - family-names: Choudhary
+    given-names: Abhishek
+    affiliation: AyeAI
+    orcid: "https://orcid.org/0009-0002-0684-8320"
+license: GPL-3.0-or-later
+repository-code: "https://github.com/zistgah/fakir"
+notes: "Copyright (c) 1993-2026 Abhishek Choudhary. All rights reserved. Built with Claude Fable 5."

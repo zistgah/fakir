@@ -1,0 +1,17 @@
+{
+  "doi": null,
+  "doi_token": "DOI-PENDING",
+  "title": "FAKIR: Foundational Architecture for Knowledge, Intelligence & Reasoning (UKOP kernel)",
+  "upload_type": "software",
+  "description": "Kernel of the Universal Knowledge Operating Platform (UKOP). Dome explorer covering all UN ISIC Rev.4 sections, ILO ISCO-08 major groups and UNESCO ISCED-F 2013 broad fields across the Project ILM AGI stack L0-L9; every (domain x layer) point seeds an AAB-methodology, oracle-gated task.",
+  "creators": [
+    { "name": "Choudhary, Abhishek", "affiliation": "AyeAI", "orcid": "0009-0002-0684-8320" }
+  ],
+  "license": "GPL-3.0-or-later",
+  "references": [
+    "VGC methodology: 10.5281/zenodo.21264248",
+    "Tok DOI: 10.5281/zenodo.21402745",
+    "misty-doi: 10.5281/zenodo.20719388"
+  ],
+  "notes": "(c) 1993-2026 Abhishek Choudhary. All rights reserved. AI model: Claude Fable 5 (Anthropic). DOI injected post-mint; no fabrication."
+}
