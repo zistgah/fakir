@@ -7,6 +7,24 @@ represented by **UN ISIC · ILO ISCO · UNESCO ISCED**. UKOP is the blueprint; F
 **Live:** zistgah.org/fakir/ — the dome IS the front door (`index.html` at the repo root; `docs/` and `explore/` removed)
 **DOI (software):** `10.5281/zenodo.21436550` · **DOI (poster corpus):** `10.5281/zenodo.21436552`
 
+## v0.6 — a true point cloud, three seeding dimensions, altitude hold
+
+- **The cloud, not rings.** Every one of the 9,350 points is individually scattered — the
+  ilm.codes/explore technique: deterministic per-point jitter on angle, radius and height,
+  capped inside the shell — and every point floats on its own phase. The AGI stack is one
+  labelled vertical axis through Ω. Verified headless: 20/20 sampled points in a single layer
+  band sit at distinct radii; the float animation moves them; exactly one line object exists.
+- **Seed layer × domain × language.** The panel gains an ILM field fed live from
+  `ilm.codes/registry/scripts.tsv` + `languages.tsv` (every ISO 15924 script, every ISO 639-3
+  language; searchable; free text if the registry is unreachable). The issue title, labels
+  (`ILM-<code>`), body and manifest JSON all carry the language. Then build it with **AAB**.
+- **Flight: altitude hold by default; gravity is now a settings toggle** (7 marked
+  `FLIGHT-MOD`s in the physics, settings and HUD; the ballistic original returns when the
+  toggle is on). Verified headless: hover holds y to ±0.001; gravity-on at low throttle sinks
+  to the deck.
+- **`.nojekyll`.** GitHub Pages was passing the 965 KB root file through Jekyll — the cause of
+  the README appearing at the home page. Pages now serves the repo raw.
+
 ## v0.5 — the homepage dome itself, at the root, with the FAKIR dots floating inside
 
 `index.html` **is the zistgah.org landing file** — same inline Three.js build, CHAKRA

@@ -1,17 +1,12 @@
 /* zistgah-dome — THE Zistgah virtual dome as a reusable app/lib.
-   VERBATIM from zistgah/zistgah.github.io index.html (script block 2: DOME7 shell, hall,
-   pillars, exhibits, oculus/CHAKRA scrub, calendar cards, dial, flight system, worlds,
-   nebula, dawn, settings, frame-budget manager) with exactly 9 marked config seams
-   (grep ZDOME-SEAM): cfg root, pillars, exhibitNames, display hook, exhibitSubs,
-   domains, marks, art, threads. Unconfigured, behavior is byte-identical in intent to
-   the zistgah.org landing. Configure via window.ZISTGAH_DOME BEFORE loading this file:
-     { display({THREE,scene,G,camera,renderer,R,D,domePoint,makeDome}),  // mount your
-       pillars:[..3 names..], exhibitNames:[..4..], exhibitSubs:{name:sub},
-       domains:[[b,p]..], marks:{key:svgPaths}, art:[[b,mark,p]..], threads:[[b,p,links]..] }
-   Add project geometry to G (the hall group) so it turns with the dome.
-   Requires: THREE r128 global + chakra-core.js (window.Chakra) + the dome DOM scaffold + dome.css.
-   Canonical home: zistgah (org). (c) 1993-2026 Abhishek Choudhary. All rights reserved. AyeAI.
-   Factored with Claude Fable 5 (Anthropic); zero-invention rule: reuse, do not reinvent. */
+   VERBATIM from zistgah/zistgah.github.io index.html (dome script block) with 9 marked
+   config seams (ZDOME-SEAM: cfg, pillars, exhibitNames, display, exhibitSubs, domains,
+   marks, art, threads) and the flight modifications ordered on 19 Jul 2026 (FLIGHT-MOD:
+   altitude hold by default; gravity is a settings toggle). Extracted from the live FAKIR
+   page, so lib and page cannot drift. Configure via window.ZISTGAH_DOME before load; add
+   project geometry to G (the hall group). Requires THREE r128 + chakra-core.js + the dome
+   DOM scaffold + dome.css. Canonical home: the zistgah org.
+   (c) 1993-2026 Abhishek Choudhary. All rights reserved. AyeAI. Claude Fable 5. */
 
 /*DOME7-BEGIN  diagrid shell + clustered-column arcade — pure, tested ----------*/
 function domePoint(v,th,R,phi0,phi1){
@@ -115,7 +110,7 @@ function downgrade(){                       // last resort, once, in order of co
 }
 
 /* ---------- settings (persisted; density rebuilds the sky) ---------- */
-const S={density:MOBILE?0.8:1,glints:true,meteors:true,drone:false,droneMode:'off',
+const S={density:MOBILE?0.8:1,glints:true,meteors:true,drone:false,droneMode:'off',gravity:false, /*FLIGHT-MOD: altitude hold is the default*/
          mouseStick:false,cam:'interior',vr:false,dpr:null,hz:null};
 try{Object.assign(S,JSON.parse(localStorage.getItem('zistgah-scene')||'{}'))}catch(e){}
 if(S.dpr)Q.dpr=S.dpr;                 // Q is defined above; honour the saved choice
@@ -656,9 +651,16 @@ function flightStep(F,u,dt,B,EMB){
   const upX=  sr*cy + cr*sp*sy, upY = cr*cp, upZ = -sr*sy + cr*sp*cy;
   const G=ZP.flight.g*E.g, HOVER=(ZP.flight.g/ZP.flight.hoverThr)*E.thrust;
   const T=F.thr*HOVER;
-  F.vx += (upX*T)*dt;
-  F.vy += (upY*T - G)*dt;
-  F.vz += (upZ*T)*dt;
+  if(S.gravity){ /*FLIGHT-MOD: ballistic (the original physics) only when gravity is switched on*/
+    F.vx += (upX*T)*dt;
+    F.vy += (upY*T - G)*dt;
+    F.vz += (upZ*T)*dt;
+  }else{ /*FLIGHT-MOD: altitude hold — throttle commands climb rate, no gravity term*/
+    F.vx += (upX*HOVER*ZP.flight.hoverThr)*dt;
+    F.vz += (upZ*HOVER*ZP.flight.hoverThr)*dt;
+    const vyT=u.thr*2.4;
+    F.vy += (vyT-F.vy)*Math.min(1,5*dt);
+  }
   const k=ZP.flight.drag;
   F.vx-=F.vx*k*dt; F.vy-=F.vy*k*dt; F.vz-=F.vz*k*dt;
   F.x+=F.vx*dt; F.y+=F.vy*dt; F.z+=F.vz*dt;
@@ -1183,6 +1185,7 @@ function buildSettings(){
      <option value="off">Hidden</option><option value="auto">Autopilot</option>
      <option value="pilot">I fly it</option></select></label>
    <label>Mouse as stick <input type="checkbox" id="sMs"></label>
+   <label>Gravity <input type="checkbox" id="sGr"></label> <!--FLIGHT-MOD-->
    <label>Camera <select id="sCam">
      <option value="interior">Interior</option><option value="orbit">Orbit</option>
      <option value="follow">Follow drone</option><option value="fpv">FPV</option>
@@ -1199,7 +1202,7 @@ function buildSettings(){
   const q=id=>el.querySelector(id)||{style:{},options:[],addEventListener(){}};
   q('#sDen').value=String(S.density);q('#sGl').checked=S.glints;
   q('#sMe').checked=S.meteors;q('#sDr').value=S.droneMode||(S.drone?'auto':'off');
-  q('#sMs').checked=!!S.mouseStick;
+  q('#sMs').checked=!!S.mouseStick;q('#sGr').checked=!!S.gravity; /*FLIGHT-MOD*/
   q('#sCam').value=S.cam;q('#sVr').checked=S.vr;
   const sync=()=>{const dis=q('#sDr').value==='off';
     for(const o of q('#sCam').options)
@@ -1215,11 +1218,12 @@ function buildSettings(){
     setEmbodiment(EMB);
     if(PILOT){F=flightInit();ZONE='dome';BND=boundsFor('dome',ZP);setEmbodiment('quad');
       if(!['follow','fpv','bottom'].includes(S.cam)){S.cam='follow';q('#sCam').value='follow'}
-      hudMsg('armed · W/S throttle · A/D yaw · arrows pitch+roll · R reset');}
+      hudMsg(S.gravity?'armed · W/S throttle · A/D yaw · arrows pitch+roll · R reset':'armed · W/S climb (altitude holds) · A/D yaw · arrows pitch+roll · R reset · gravity: settings'); /*FLIGHT-MOD*/}
     if(!S.drone&&['follow','fpv','bottom'].includes(S.cam)){S.cam='interior';q('#sCam').value='interior'}
     showFlightUI();
     sync();saveS()};
   q('#sMs').onchange=e=>{S.mouseStick=e.target.checked;mouseOn=S.mouseStick;saveS()};
+  q('#sGr').onchange=e=>{S.gravity=e.target.checked;saveS();hudMsg(S.gravity?'gravity ON — ballistic physics':'gravity OFF — altitude hold')}; /*FLIGHT-MOD*/
   q('#sCam').onchange=e=>{S.cam=e.target.value;showFlightUI();saveS()};
   q('#sVr').onchange=e=>{S.vr=e.target.checked;saveS()};
   q('#sDpr').onchange=e=>{S.dpr=+e.target.value;Q.dpr=S.dpr;Q.tier=0;applyDPR();saveS()};
