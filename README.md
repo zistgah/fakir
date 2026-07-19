@@ -7,15 +7,23 @@ represented by **UN ISIC · ILO ISCO · UNESCO ISCED**. UKOP is the blueprint; F
 **Live:** zistgah.org/fakir/ · **Explorer:** `explore/` (old `docs/` redirects)
 **DOI (software):** `10.5281/zenodo.21436550` · **DOI (poster corpus):** `10.5281/zenodo.21436552`
 
-## v0.3 — inside the shared Zistgah dome, for real
+## v0.4 — the homepage dome itself, with the FAKIR dots floating inside
 
-The explorer no longer draws its own hall. It mounts FAKIR's display inside
-**`vendor/zistgah-dome/`** — the complete zistgah.org experience factored as an app/lib
-(verbatim + 9 marked config seams): interior first-person view, oculus **time scrub**, the
-ten-calendar **CHAKRA** strip and dial, the **flight system** (keyboard / gamepad / touch
-sticks — thread the oculus and fly to the worlds), exhibit pedestals with plaques and hover
-cards, nebula, glyphs, meteors, dawn cycle, settings. One dome, every property; projects
-supply only their display. See `vendor/zistgah-dome/README.md` for the lib contract.
+`explore/index.html` **is the zistgah.org landing file** — same inline Three.js build, CHAKRA
+strip + dial, oculus time scrub, flight system (thread the oculus, fly to the worlds), exhibit
+pedestals, nebula, glyphs, meteors, dawn, settings, **PWA** (`explore/manifest.webmanifest`,
+`sw.js`, icons — installable, works offline) — transformed in place: 9 marked config seams
+(`grep ZDOME-SEAM`) + FAKIR's lattice mounted into the hall group so the 9,350 points turn
+with the dome. All features, by construction, because it is the same file.
+
+**Executed, not just parsed:** a jsdom harness boots the whole page headless — 10 calendar
+cards render, the seams consume FAKIR's content, the 1,505-row tree builds, search filters
+live, the seeding panel opens with full lineage, and `display()` runs in-realm against the
+real `makeDome`: 3 family clouds · 9,350 points · 10 layer rings · highlight overlay. Only
+GPU rasterization remains for the human eye.
+
+`vendor/zistgah-dome/` stays as the lift-out lib (same seams) for any other property; see its
+README for the contract.
 
 **FAKIR's display data:** the exhaustive lattice —
 | Family | Levels | Counts | Source |
