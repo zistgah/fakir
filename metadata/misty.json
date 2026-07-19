@@ -1,10 +1,9 @@
 {
   "doi": "10.5281/zenodo.21436550",
-  "doi_token": "DOI-PENDING",
   "title": "FAKIR: Foundational Architecture for Knowledge, Intelligence & Reasoning (UKOP kernel)",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "upload_type": "software",
-  "description": "Kernel of the Universal Knowledge Operating Platform (UKOP). v0.2: reuses the Zistgah DOME7 diagrid dome implementation verbatim and places the exhaustive knowledge lattice inside it - every UN ISIC Rev.4 section/division/group/class (21/88/238/419), every ILO ISCO-08 major/sub-major/minor/unit group (10/43/130/436) and every UNESCO ISCED-F 2013 broad/narrow/detailed field (11/29/80): 1,505 nodes, 935 leaves x AGI stack L0-L9 (Project ILM) = 9,350 seed points. Every node at every level seeds an AAB-methodology, oracle-gated task (VGC doi:10.5281/zenodo.21264248). Includes the 11-poster UKOP/FAKIR/Kaivalyik corpus with trademark disclaimer.",
+  "description": "Kernel of the Universal Knowledge Operating Platform (UKOP). v0.3 mounts the exhaustive lattice inside the shared Zistgah virtual dome: vendor/zistgah-dome factors the complete zistgah.org experience (interior hall, oculus time scrub, CHAKRA calendars and dial, flight system, exhibit pedestals, dawn, nebula) into a reusable app/lib - verbatim plus 9 marked config seams; projects mount displays via window.ZISTGAH_DOME.display. FAKIR's display: every UN ISIC Rev.4 (21/88/238/419), ILO ISCO-08 (10/43/130/436) and UNESCO ISCED-F 2013 (11/29/80) node - 1,505 nodes, 935 leaves x AGI stack L0-L9 (Project ILM) = 9,350 seed points; every node at every level seeds an oracle-gated AAB task (VGC doi:10.5281/zenodo.21264248). Poster corpus DOI: 10.5281/zenodo.21436552.",
   "license": "GPL-3.0-or-later",
   "access_right": "open",
   "creators": [
