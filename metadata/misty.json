@@ -2,12 +2,17 @@
   "doi": null,
   "doi_token": "DOI-PENDING",
   "title": "FAKIR: Foundational Architecture for Knowledge, Intelligence & Reasoning (UKOP kernel)",
+  "version": "0.2.0",
   "upload_type": "software",
-  "description": "Kernel of the Universal Knowledge Operating Platform (UKOP). Dome explorer covering all UN ISIC Rev.4 sections, ILO ISCO-08 major groups and UNESCO ISCED-F 2013 broad fields across the Project ILM AGI stack L0-L9; every (domain x layer) point seeds an AAB-methodology, oracle-gated task.",
+  "description": "Kernel of the Universal Knowledge Operating Platform (UKOP). v0.2: reuses the Zistgah DOME7 diagrid dome implementation verbatim and places the exhaustive knowledge lattice inside it - every UN ISIC Rev.4 section/division/group/class (21/88/238/419), every ILO ISCO-08 major/sub-major/minor/unit group (10/43/130/436) and every UNESCO ISCED-F 2013 broad/narrow/detailed field (11/29/80): 1,505 nodes, 935 leaves x AGI stack L0-L9 (Project ILM) = 9,350 seed points. Every node at every level seeds an AAB-methodology, oracle-gated task (VGC doi:10.5281/zenodo.21264248). Includes the 11-poster UKOP/FAKIR/Kaivalyik corpus with trademark disclaimer.",
+  "license": "GPL-3.0-or-later",
+  "access_right": "open",
   "creators": [
     { "name": "Choudhary, Abhishek", "affiliation": "AyeAI", "orcid": "0009-0002-0684-8320" }
   ],
-  "license": "GPL-3.0-or-later",
+  "keywords": ["UKOP","FAKIR","knowledge operating platform","ISIC","ISCO","ISCED","AGI stack","AAB","VGC","Zistgah"],
+  "related_identifiers": [],
+  "repository": "https://github.com/zistgah/fakir",
   "references": [
     "VGC methodology: 10.5281/zenodo.21264248",
     "Tok DOI: 10.5281/zenodo.21402745",

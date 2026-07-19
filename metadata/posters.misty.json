@@ -1,0 +1,14 @@
+{
+  "title": "UKOP / FAKIR / Kaivalyik: Civilizational-Scale Reference Architecture Poster Corpus (11 posters)",
+  "version": "1.0.0",
+  "upload_type": "poster",
+  "description": "Eleven reference-architecture posters: UKOP (Universal Knowledge Operating Platform) domain coverage across UN ISIC, ILO ISCO and UNESCO ISCED; FAKIR (Foundational Architecture for Knowledge, Intelligence & Reasoning), the UKOP kernel; and the Kaivalyik AGI civilizational reference architecture. TRADEMARK NOTICE: names and logos of standards bodies and organizations (ISO, IEC, IEEE, ITU, W3C, OASIS, HL7, ANSI, BSI, DIN, INCOSE, PMI, Linux Foundation and many others) appear solely for identification and nominative reference in this academic/architectural survey; all marks are the property of their respective owners; no affiliation, sponsorship or endorsement is implied. Copyright (c) 1993-2026 Abhishek Choudhary. All rights reserved. AyeAI. AI model: Claude Fable 5 (Anthropic).",
+  "license": "cc-by-nd-4.0",
+  "access_right": "open",
+  "creators": [
+    { "name": "Choudhary, Abhishek", "affiliation": "AyeAI", "orcid": "0009-0002-0684-8320" }
+  ],
+  "keywords": ["UKOP","FAKIR","Kaivalyik","reference architecture","standards","ISIC","ISCO","ISCED","knowledge operating platform","AGI"],
+  "related_identifiers": [],
+  "repository": "https://github.com/zistgah/fakir"
+}

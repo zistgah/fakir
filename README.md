@@ -2,37 +2,49 @@
 
 **The kernel of UKOP** (Universal Knowledge Operating Platform) — the concrete, executable
 substrate under the civilizational-scale reference architecture covering every domain
-represented by **UN ISIC · ILO ISCO · UNESCO ISCED**.
+represented by **UN ISIC · ILO ISCO · UNESCO ISCED**. UKOP is the blueprint; FAKIR is the engine.
 
-- **UKOP** = the reference architecture (the blueprint specification).
-- **FAKIR** = the kernel (this repo): deterministic engine, dome explorer, task-seeding surface.
+**Home:** `index.html` (zistgah.org/fakir/) · **Explorer:** `explore/` · old `docs/` URL redirects.
 
-## The Dome Explorer (`docs/index.html`)
+## The Explorer — inside the Zistgah dome, exhaustive
 
-A 3D point cloud inside the **zistgah dome**, in the lineage of
-[ilm.codes/explore](https://ilm.codes/explore/):
+- **The dome is Zistgah's own.** `vendor/zistgah-dome7.js` is the `DOME7` diagrid-shell +
+  clustered-column arcade implementation from the zistgah.org landing, **reused verbatim**
+  (provenance header inside). The FAKIR lattice is placed *inside* that dome, positioned with
+  the very same `domePoint()` the shell uses.
+- **Exhaustive, not representative.** Every node of all three UN families, hard-gated at build
+  and at apply:
+  | Family | Levels | Counts | Source |
+  |---|---|---|---|
+  | UN ISIC Rev.4 | Section·Division·Group·Class | 21 / 88 / 238 / 419 | UNSD structure file (verbatim, `data/isic_rev4.csv`) |
+  | ILO ISCO-08 | Major·Sub-major·Minor·Unit | 10 / 43 / 130 / 436 | ILO structure & definitions (`data/isco08.json`) |
+  | UNESCO ISCED-F 2013 | Broad·Narrow·Detailed | 11 / 29 / 80 | UIS Appendix 1 code list |
 
-- **Every domain, complete:** 21 ISIC Rev.4 sections + 10 ISCO-08 major groups +
-  11 ISCED-F 2013 broad fields = **42 domains**, colour-coded by family
-  (ISIC lapis · ISCO gold · ISCED turquoise — meenakari palette).
-- **Vertical axis:** the AGI stack **L0→L9** from Project ILM
-  (Hardware Definition → AGI/ASI). 42 × 10 = **420 seed points** around the canonical core Ω.
-- **Click any point** → seed a task for that *(domain × layer)* as a pre-filled GitHub issue
-  using the **AAB methodology** (آب): intent preserved verbatim, painted manifest
-  (actors · components · stores · gates/oracles · interfaces · environments · flows),
-  VGC quest stages, oracle-gated verification. *No oracle, no glow.*
-- **Text list preserved:** one toggle switches to a fully readable, keyboard-friendly list
-  with the same colour coding and the same seeding action. No WebGL required.
+  **1,505 nodes · 935 leaves × AGI stack L0–L9 (Project ILM) = 9,350 dome seed points.**
+  Full citations: `data/SOURCES.md`.
+- **Seed anywhere.** Click any dome point *(leaf × layer)* — or the ✦ button on **any node at
+  any level** in the text-list tree — to open a pre-filled GitHub issue using the **AAB
+  methodology** (آب): verbatim intent ledger, painted manifest (actors · components · stores ·
+  gates/oracles · interfaces · environments · flows), VGC quest stages Q1–Q6, oracle-gated.
+  *No oracle, no glow.*
+- **Text list preserved** — the complete collapsible trees, searchable (all 1,505 nodes),
+  keyboard-friendly, zero WebGL required. Search also lights matching leaves in the dome.
 
-Offline-first: data is inlined; `data/domains.json` is the canonical copy for tooling.
-Serve via GitHub Pages (Settings → Pages → `main` / `docs`).
+## Poster corpus (`posters/`)
+
+Eleven UKOP · FAKIR · Kaivalyik posters, minted together as one deposit
+(`metadata/posters.misty.json`). **`posters/TRADEMARKS.md`** carries the logo/trademark
+disclaimer: all marks belong to their respective owners and appear solely for identification in
+an academic survey; no affiliation or endorsement implied.
 
 ## Provenance & publication
 
-- Seal: `ops/seal.sh` → `MANIFEST.sha256` (+ OpenTimestamps stamp when `ots` is present).
-- DOI: `DOI-PENDING` token only — injected post-mint via **misty-doi / mistyx**. No fabrication.
-- Atomic registration: Tok DOI (doi:10.5281/zenodo.21402745). Method: VGC (doi:10.5281/zenodo.21264248).
-- Governance: thin overlay in `CONTRACT.md` → master contract at `zistgah/governance`.
+- Seal: `ops/seal.sh` → `MANIFEST.sha256` (+ OpenTimestamps when `ots` is present).
+- DOI: `DOI-PENDING` tokens only — injected post-mint via **misty-doi** (`misty publish`).
+- Push · Pages · Mint · DOI-record-back are executed by `apply_fakir.sh` under typed,
+  Candor-attested assertions (PUSH / PAGES / MINT) — one script, no donkey work.
+- Refs: Tok DOI `10.5281/zenodo.21402745` · VGC `10.5281/zenodo.21264248`.
+- Governance: `CONTRACT.md` → master at `zistgah/governance`. Licensing per category: `LICENSING.md`.
 
 **Author:** Abhishek Choudhary · **Affiliation:** AyeAI · ORCID 0009-0002-0684-8320
 © 1993–2026 Abhishek Choudhary. All rights reserved. · Built with Claude Fable 5 (Anthropic).
