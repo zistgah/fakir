@@ -4,15 +4,14 @@
 substrate under the civilizational-scale reference architecture covering every domain
 represented by **UN ISIC · ILO ISCO · UNESCO ISCED**. UKOP is the blueprint; FAKIR is the engine.
 
-**Live:** zistgah.org/fakir/ · **Explorer:** `explore/` (old `docs/` redirects)
+**Live:** zistgah.org/fakir/ — the dome IS the front door (`index.html` at the repo root; `docs/` and `explore/` removed)
 **DOI (software):** `10.5281/zenodo.21436550` · **DOI (poster corpus):** `10.5281/zenodo.21436552`
 
-## v0.4 — the homepage dome itself, with the FAKIR dots floating inside
+## v0.5 — the homepage dome itself, at the root, with the FAKIR dots floating inside
 
-`explore/index.html` **is the zistgah.org landing file** — same inline Three.js build, CHAKRA
+`index.html` **is the zistgah.org landing file** — same inline Three.js build, CHAKRA
 strip + dial, oculus time scrub, flight system (thread the oculus, fly to the worlds), exhibit
-pedestals, nebula, glyphs, meteors, dawn, settings, **PWA** (`explore/manifest.webmanifest`,
-`sw.js`, icons — installable, works offline) — transformed in place: 9 marked config seams
+pedestals, nebula, glyphs, meteors, dawn, settings, **PWA** (`manifest.webmanifest`, `sw.js`, icons at the root — installable, works offline) — transformed in place: 9 marked config seams
 (`grep ZDOME-SEAM`) + FAKIR's lattice mounted into the hall group so the 9,350 points turn
 with the dome. All features, by construction, because it is the same file.
 
