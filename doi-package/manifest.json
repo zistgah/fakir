@@ -1,0 +1,86 @@
+{
+  "title": "UKOP / FAKIR / Kaivalyik: Civilizational-Scale Reference Architecture Poster Corpus (11 posters)",
+  "version": "1.0.0",
+  "doi": null,
+  "license": "cc-by-nd-4.0",
+  "artifacts": [
+    {
+      "name": "19376.png",
+      "size": 2327380,
+      "sha256": "8288802f6bf978f279feb4c4c1e0e4a4cfb658d75e46d1d792aa82b5e72a0d13"
+    },
+    {
+      "name": "19377.png",
+      "size": 2018649,
+      "sha256": "b426c77d90efdfa44f29cfe6b11fec983f27b0133a913e4326b4d60e24886a33"
+    },
+    {
+      "name": "19378.png",
+      "size": 2274190,
+      "sha256": "2286024b470daa389b059cc72eb5afaea3587f2dd0fdb0fd96356f9849d61632"
+    },
+    {
+      "name": "19417.png",
+      "size": 2014350,
+      "sha256": "0ee3d5030b2f0d2bf5462dcfab91f86edd1c8c1426ab3142b29bce1d5c7a8e63"
+    },
+    {
+      "name": "19418.png",
+      "size": 1969923,
+      "sha256": "2e1c6d8a8750bb72a3e4f5da4e0c899893716b86c18a0dbf000c7390f13299d9"
+    },
+    {
+      "name": "19419.png",
+      "size": 2074659,
+      "sha256": "92fe68001e1dfa30dd032eaab88f9c0a7bc72bb2d9ace3b06876791ffc748126"
+    },
+    {
+      "name": "19420.png",
+      "size": 2140070,
+      "sha256": "e3098cba2529a3ec88a3bfea3a65a0854607498176471c53e63431488edd191e"
+    },
+    {
+      "name": "19421.png",
+      "size": 1948125,
+      "sha256": "23503554da267869b309b96ce2abb51e4687fb0ab9295c875bb33e39317e4f8a"
+    },
+    {
+      "name": "19428.png",
+      "size": 1919337,
+      "sha256": "6dc16b9786a1878a0cb165e82ecaa42899f72547a38b10df51076ae37b39936e"
+    },
+    {
+      "name": "19429.png",
+      "size": 1910071,
+      "sha256": "33e86e56ea76a695cb05ef6c32fe1de55d695bf7da3f58c70945d846d7a61238"
+    },
+    {
+      "name": "19539.png",
+      "size": 2202209,
+      "sha256": "b4e3c8cecd3af256f55b1cb871ac73b21de2beae00bdde90ce9d3e8b4ccf61d5"
+    }
+  ],
+  "metadata_files": [
+    "metadata.json",
+    "zenodo.json",
+    "datacite.json",
+    "codemeta.json",
+    "CITATION.cff"
+  ],
+  "reproducibility": {
+    "checksums": {
+      "19376.png": "8288802f6bf978f279feb4c4c1e0e4a4cfb658d75e46d1d792aa82b5e72a0d13",
+      "19377.png": "b426c77d90efdfa44f29cfe6b11fec983f27b0133a913e4326b4d60e24886a33",
+      "19378.png": "2286024b470daa389b059cc72eb5afaea3587f2dd0fdb0fd96356f9849d61632",
+      "19417.png": "0ee3d5030b2f0d2bf5462dcfab91f86edd1c8c1426ab3142b29bce1d5c7a8e63",
+      "19418.png": "2e1c6d8a8750bb72a3e4f5da4e0c899893716b86c18a0dbf000c7390f13299d9",
+      "19419.png": "92fe68001e1dfa30dd032eaab88f9c0a7bc72bb2d9ace3b06876791ffc748126",
+      "19420.png": "e3098cba2529a3ec88a3bfea3a65a0854607498176471c53e63431488edd191e",
+      "19421.png": "23503554da267869b309b96ce2abb51e4687fb0ab9295c875bb33e39317e4f8a",
+      "19428.png": "6dc16b9786a1878a0cb165e82ecaa42899f72547a38b10df51076ae37b39936e",
+      "19429.png": "33e86e56ea76a695cb05ef6c32fe1de55d695bf7da3f58c70945d846d7a61238",
+      "19539.png": "b4e3c8cecd3af256f55b1cb871ac73b21de2beae00bdde90ce9d3e8b4ccf61d5"
+    },
+    "tool": "misty-doi"
+  }
+}

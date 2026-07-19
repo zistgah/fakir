@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "http://datacite.org/schema/kernel-4",
+  "types": {
+    "resourceTypeGeneral": "Text",
+    "resourceType": "poster"
+  },
+  "titles": [
+    {
+      "title": "UKOP / FAKIR / Kaivalyik: Civilizational-Scale Reference Architecture Poster Corpus (11 posters)"
+    }
+  ],
+  "creators": [
+    {
+      "name": "Choudhary, Abhishek",
+      "nameType": "Personal",
+      "givenName": "Abhishek",
+      "familyName": "Choudhary",
+      "affiliation": [
+        {
+          "name": "AyeAI"
+        }
+      ],
+      "nameIdentifiers": [
+        {
+          "nameIdentifier": "https://orcid.org/0009-0002-0684-8320",
+          "nameIdentifierScheme": "ORCID",
+          "schemeUri": "https://orcid.org"
+        }
+      ]
+    }
+  ],
+  "publisher": "Zenodo",
+  "publicationYear": "2026",
+  "subjects": [
+    {
+      "subject": "UKOP"
+    },
+    {
+      "subject": "FAKIR"
+    },
+    {
+      "subject": "Kaivalyik"
+    },
+    {
+      "subject": "reference architecture"
+    },
+    {
+      "subject": "standards"
+    },
+    {
+      "subject": "ISIC"
+    },
+    {
+      "subject": "ISCO"
+    },
+    {
+      "subject": "ISCED"
+    },
+    {
+      "subject": "knowledge operating platform"
+    },
+    {
+      "subject": "AGI"
+    }
+  ],
+  "version": "1.0.0",
+  "descriptions": [
+    {
+      "description": "Eleven reference-architecture posters: UKOP (Universal Knowledge Operating Platform) domain coverage across UN ISIC, ILO ISCO and UNESCO ISCED; FAKIR (Foundational Architecture for Knowledge, Intelligence & Reasoning), the UKOP kernel; and the Kaivalyik AGI civilizational reference architecture. TRADEMARK NOTICE: names and logos of standards bodies and organizations (ISO, IEC, IEEE, ITU, W3C, OASIS, HL7, ANSI, BSI, DIN, INCOSE, PMI, Linux Foundation and many others) appear solely for identification and nominative reference in this academic/architectural survey; all marks are the property of their respective owners; no affiliation, sponsorship or endorsement is implied. Copyright (c) 1993-2026 Abhishek Choudhary. All rights reserved. AyeAI. AI model: Claude Fable 5 (Anthropic).",
+      "descriptionType": "Abstract"
+    }
+  ],
+  "rightsList": [
+    {
+      "rights": "cc-by-nd-4.0",
+      "rightsIdentifier": "cc-by-nd-4.0",
+      "rightsIdentifierScheme": "SPDX"
+    }
+  ],
+  "language": "eng"
+}

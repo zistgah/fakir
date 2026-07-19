@@ -1,0 +1,18 @@
+{
+  "tool": "misty-doi",
+  "state": "published",
+  "doi": "10.5281/zenodo.21436550",
+  "concept_doi": "10.5281/zenodo.21436549",
+  "record_url": "https://zenodo.org/record/21436550",
+  "deposition_id": 21436550,
+  "bucket": "https://zenodo.org/api/files/24743793-5c48-40c5-8b14-8cdd6a96ad75",
+  "sandbox": false,
+  "files": [
+    {
+      "name": "fakir-c285a10.tar.gz",
+      "size": 22289042,
+      "sha256": "d1e4d42def02c5befaabd186e262c523396143c2f53076eef0cdf477a27db9ec"
+    }
+  ],
+  "generated_at": "2026-07-19T03:46:19+00:00"
+}

@@ -40,7 +40,7 @@ an academic survey; no affiliation or endorsement implied.
 ## Provenance & publication
 
 - Seal: `ops/seal.sh` → `MANIFEST.sha256` (+ OpenTimestamps when `ots` is present).
-- DOI: `DOI-PENDING` tokens only — injected post-mint via **misty-doi** (`misty publish`).
+- DOI: `10.5281/zenodo.21436550` tokens only — injected post-mint via **misty-doi** (`misty publish`).
 - Push · Pages · Mint · DOI-record-back are executed by `apply_fakir.sh` under typed,
   Candor-attested assertions (PUSH / PAGES / MINT) — one script, no donkey work.
 - Refs: Tok DOI `10.5281/zenodo.21402745` · VGC `10.5281/zenodo.21264248`.

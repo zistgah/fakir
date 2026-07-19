@@ -1,5 +1,5 @@
 {
-  "doi": null,
+  "doi": "10.5281/zenodo.21436550",
   "doi_token": "DOI-PENDING",
   "title": "FAKIR: Foundational Architecture for Knowledge, Intelligence & Reasoning (UKOP kernel)",
   "version": "0.2.0",
@@ -8,9 +8,24 @@
   "license": "GPL-3.0-or-later",
   "access_right": "open",
   "creators": [
-    { "name": "Choudhary, Abhishek", "affiliation": "AyeAI", "orcid": "0009-0002-0684-8320" }
+    {
+      "name": "Choudhary, Abhishek",
+      "affiliation": "AyeAI",
+      "orcid": "0009-0002-0684-8320"
+    }
   ],
-  "keywords": ["UKOP","FAKIR","knowledge operating platform","ISIC","ISCO","ISCED","AGI stack","AAB","VGC","Zistgah"],
+  "keywords": [
+    "UKOP",
+    "FAKIR",
+    "knowledge operating platform",
+    "ISIC",
+    "ISCO",
+    "ISCED",
+    "AGI stack",
+    "AAB",
+    "VGC",
+    "Zistgah"
+  ],
   "related_identifiers": [],
   "repository": "https://github.com/zistgah/fakir",
   "references": [

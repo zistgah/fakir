@@ -2,7 +2,7 @@
 
 Civilizational-scale reference-architecture posters: UKOP (Universal Knowledge Operating
 Platform) coverage of UN ISIC · ILO ISCO · UNESCO ISCED, FAKIR (the UKOP kernel), and the
-Kaivalyik AGI reference architecture. Minted together as a single deposit (DOI-PENDING —
+Kaivalyik AGI reference architecture. Minted together as a single deposit (10.5281/zenodo.21436552 —
 injected post-mint via misty-doi).
 
 See `TRADEMARKS.md` for the logo/trademark disclaimer (academic identification use only).
