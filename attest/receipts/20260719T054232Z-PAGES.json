@@ -1,0 +1,1 @@
+{"_type":"https://in-toto.io/Statement/v1","predicateType":"https://project-ilm.org/attestations/candor/v1","subject":[{"name":"zistgah/fakir","digest":{"gitCommit":"85bce8bcf59a844d59b2400ac06284ebe4eb5d06"}}],"predicate":{"action":"PAGES","reason":"refactor","utc":"20260719T054232Z","host":"ilm01-lin"}}
