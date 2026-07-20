@@ -1,0 +1,64 @@
+{
+  "_": "FAKIR dome configuration — data only. Functions (displays.onPick etc.) live in the page script. Schema: zistgah/dome docs/CONFIG.md. (c) 1993-2026 Abhishek Choudhary · AyeAI.",
+  "domains": [
+    ["UN ISIC Rev.4","21 sections · 88 divisions · 238 groups · 419 classes — every industry."],
+    ["ILO ISCO-08","10 major · 43 sub-major · 130 minor · 436 unit groups — every occupation."],
+    ["UNESCO ISCED-F 2013","11 broad · 29 narrow · 80 detailed fields — every field of education."],
+    ["AGI Stack L0–L9","Hardware Definition → AGI/ASI — the Project ILM vertical, in the cluster under the oculus."],
+    ["ILM Languages","Every ISO 15924 script and ISO 639-3 language — the third seeding dimension, live from ilm.codes."]
+  ],
+  "marks": {
+    "fakir": "<path d=\"M15 62 A31 31 0 0 1 71 62 Z\"/><circle cx=\"43\" cy=\"46\" r=\"2.6\"/><circle cx=\"31\" cy=\"52\" r=\"2.6\"/><circle cx=\"55\" cy=\"52\" r=\"2.6\"/><circle cx=\"43\" cy=\"34\" r=\"2.6\"/><path d=\"M43 62 43 70\"/>",
+    "ukop": "<circle cx=\"43\" cy=\"43\" r=\"28\"/><ellipse cx=\"43\" cy=\"43\" rx=\"28\" ry=\"11\"/><ellipse cx=\"43\" cy=\"43\" rx=\"11\" ry=\"28\"/><path d=\"M15 43 H71 M43 15 V71\"/>",
+    "aab": "<path d=\"M43 18 C58 38 62 48 62 56 a19 19 0 1 1 -38 0 c0-8 4-18 19-38 Z\"/><path d=\"M32 56 q11 7 22 0\"/>",
+    "ilm": "<circle cx=\"43\" cy=\"43\" r=\"26\"/><path d=\"M29 43 q14 -18 28 0 q-14 18 -28 0 Z\"/><circle cx=\"43\" cy=\"43\" r=\"4\"/>",
+    "zist": "<path d=\"M20 60 A26 26 0 0 1 66 60 Z\"/><path d=\"M30 60 38 44 46 60 M46 60 54 50 62 60\"/><circle cx=\"43\" cy=\"30\" r=\"3\"/>"
+  },
+  "art": [
+    ["FAKIR","fakir","The kernel of UKOP — every domain, every layer, oracle-gated."],
+    ["UKOP","ukop","Universal Knowledge Operating Platform — the civilizational blueprint."],
+    ["ILM","ilm","Any language — scripts × languages × the same AGI stack, at ilm.codes."],
+    ["AAB over VGC","aab","Verbatim intent · painted manifests · quests. No oracle, no glow."],
+    ["Zistgah","zist","The living habitat — this very dome, the same everywhere."]
+  ],
+  "threads": [
+    ["Seed in three dimensions",
+     "AGI layer (L0–L9) × domain (FAKIR: ISIC · ISCO · ISCED) × language (ILM: ISO 15924 · ISO 639-3) — then build it with the AAB process.",
+     [["ILM explorer","https://ilm.codes/explore/"],["AAB","https://zistgah.org/aab/"]]],
+    ["FAKIR — software record",
+     "Kernel of UKOP; the lattice as a floating cluster beneath the oculus of the shared Zistgah dome.",
+     [["DOI 10.5281/zenodo.21436550","https://doi.org/10.5281/zenodo.21436550"],["repository","https://github.com/zistgah/fakir"]]],
+    ["UKOP · FAKIR · Kaivalyik — poster corpus",
+     "Eleven reference-architecture posters, one deposit — and the viewer's gallery on this floor rotates through them.",
+     [["DOI 10.5281/zenodo.21436552","https://doi.org/10.5281/zenodo.21436552"],["TRADEMARKS.md","https://github.com/zistgah/fakir/blob/main/posters/TRADEMARKS.md"]]],
+    ["The dome itself — one dome, everywhere",
+     "github.com/zistgah/dome: the zistgah.org experience as a documented app/lib — config-file driven worlds, displays, gallery, videos, flight.",
+     [["zistgah/dome","https://github.com/zistgah/dome"],["chakra-core","https://github.com/project-ilm/chakra"]]],
+    ["Data — exhaustive, count-gated",
+     "UNSD ISIC Rev.4 (verbatim) · ILO ISCO-08 · UNESCO ISCED-F 2013 · ILM registries live.",
+     [["SOURCES.md","https://github.com/zistgah/fakir/blob/main/data/SOURCES.md"]]]
+  ],
+  "flight": { "spawn": { "zone": "space", "pos": [0, 20, 26], "yaw": 3.14159 } },
+  "worlds": {
+    "patch": [
+      { "id": "moon", "gravity": 0.165 },
+      { "id": "mars", "gravity": 0.38 }
+    ],
+    "add": [
+      { "id": "ceres", "label": "Ceres habitat (name pending your ruling)", "short": "Ceres",
+        "r": 8, "at": [-150, 92, 60], "coast": false, "gravity": 0.029,
+        "habitat": { "domeR": 4.5, "embodiment": "lander" }, "tint": 9411237, "atmo": 3162202 },
+      { "id": "station-a1", "label": "Orbital Station A1 (name pending your ruling)", "short": "A1",
+        "kind": "station", "r": 6, "at": [64, 112, -44], "coast": false, "gravity": 0,
+        "habitat": { "domeR": 3.4, "embodiment": "lander" }, "tint": 10134448, "atmo": 3162202 }
+    ]
+  },
+  "gallery": {
+    "title": "Viewer's gallery — UKOP · FAKIR · Kaivalyik posters",
+    "slots": 5, "intervalS": 18, "radius": 7.4, "y": 1.35,
+    "images": ["posters/19376.png","posters/19377.png","posters/19378.png","posters/19417.png",
+               "posters/19418.png","posters/19419.png","posters/19420.png","posters/19421.png",
+               "posters/19428.png","posters/19429.png","posters/19539.png"]
+  },
+  "videos": { "items": [] }
+}

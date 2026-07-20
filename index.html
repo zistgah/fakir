@@ -34,7 +34,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <title>FAKIR — the UKOP kernel, inside the shared Zistgah dome</title>
-<meta name="description" content="Seed AGI layer × domain × language: every UN ISIC, ILO ISCO and UNESCO ISCED node across L0–L9, every ILM script and language, as a floating point cloud inside the Zistgah dome. Oracle-gated AAB tasks.">
+<meta name="description" content="Seed AGI layer × domain × language: every UN ISIC, ILO ISCO and UNESCO ISCED node across L0–L9, every ILM script and language, clustered under the oculus of the Zistgah dome. Oracle-gated AAB tasks.">
 <style>
 :root{--bg:#050a18;--ink:#f2ecdd;--mut:#8d94a8;--panel:rgba(6,11,26,.55);
       --panelb:rgba(201,164,78,.28);--gold:#c9a44e;--illum:0;
@@ -201,8 +201,7 @@ footer{position:relative;z-index:4;border-top:1px solid var(--panelb);
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.rev{transition:none;opacity:1;transform:none}
   #gl{transition:none}}
-</style><style>
-/* ---- FAKIR extension (fk-prefixed; the hall untouched) ---- */
+</style><style>/* ---- FAKIR extension (fk-prefixed; the hall untouched) ---- */
 #fktip{position:fixed;pointer-events:none;background:#0d1526;border:1px solid #c9a44e;border-radius:6px;padding:.32em .55em;font:13px/1.45 system-ui;color:#e9e4d6;display:none;max-width:300px;z-index:60}
 #fkpanel{position:fixed;inset:auto 0 0 0;max-height:84vh;overflow:auto;z-index:70;background:#0d1526;border-top:2px solid #c9a44e;padding:1em 1.2em 1.3em;display:none;color:#e9e4d6;font:15px/1.5 system-ui}
 @media(min-width:880px){#fkpanel{inset:auto 1.2em 1.2em auto;width:460px;border:1px solid #c9a44e;border-radius:10px}}
@@ -260,7 +259,7 @@ footer{position:relative;z-index:4;border-top:1px solid var(--panelb);
     stack) × <b>domain</b> (every UN&nbsp;ISIC industry, ILO&nbsp;ISCO occupation and
     UNESCO&nbsp;ISCED field — FAKIR) × <b>language</b> (every ISO&nbsp;15924 script and
     ISO&nbsp;639-3 language — ILM, live from ilm.codes) — then build it with the <b>AAB</b>
-    process. 9,350 points float in the dome above; click any one, or any row below.</p></section>
+    process. The 9,350 seed points hang as a cluster beneath the oculus; click any one, or any row below.</p></section>
   <section><h2 class="rev">The Three Seeding Dimensions</h2>
     <div class="domains rev" id="domains"></div></section>
   <section><h2 class="rev">Hero Artifacts</h2>
@@ -270,7 +269,7 @@ footer{position:relative;z-index:4;border-top:1px solid var(--panelb);
   <section id="lat"><h2 class="rev">The Lattice — every node, seedable, in any language</h2>
     <div class="fkbar rev"><input id="fkq" type="search"
       placeholder="search 1,505 nodes… (e.g. rice, nursing, 6201)" aria-label="Search nodes"><span id="fkqn"></span></div>
-    <p class="fkhintline rev">✦ on any row — any level — opens the seeding panel (layer × domain × language). Search also lights matching leaves in the dome above.</p>
+    <p class="fkhintline rev">✦ on any row — any level — opens the seeding panel (layer × domain × language). Search also lights matching leaves in the cluster above.</p>
     <div id="fklist" class="rev"></div></section>
   <section><p class="quote rev">From knowledge to wisdom.<br>From wisdom to compassion.<br>
     From compassion to civilization.<small>— ABHISHEK CHOUDHARY</small></p>
@@ -287,11 +286,10 @@ footer{position:relative;z-index:4;border-top:1px solid var(--panelb);
 <div class="stick" id="stickL"><div class="knob"></div></div>
 <div class="stick" id="stickR"><div class="knob"></div></div>
 <div id="toast" role="status">Context seed copied — paste into any AI chat.</div>
-<footer>FAKIR · kernel of UKOP · the Zistgah dome, whole (this file = the zistgah.org landing + 9 marked seams + the point cloud) ·
+<footer>FAKIR · kernel of UKOP · the shared Zistgah dome (lib: zistgah/dome) · content, worlds, gallery &amp; flight from <span style="font-family:ui-monospace,monospace">dome.config.json</span> ·
 calendars &amp; dial by chakra-core (project-ilm/chakra) · languages live from ilm.codes<br>
 DOI 10.5281/zenodo.21436550 · posters 10.5281/zenodo.21436552 · data: UNSD ISIC Rev.4 · ILO ISCO-08 · UNESCO ISCED-F 2013<br>
 © 1993–2026 Abhishek Choudhary · AyeAI · ORCID 0009-0002-0684-8320 · Built with Claude Fable 5 (Anthropic)</footer>
-
 <div id="fktip" role="status"></div>
 <aside id="fkpanel" role="dialog" aria-labelledby="fkpTitle">
   <button class="fkclose" id="fkpClose" aria-label="Close">✕</button>
@@ -312,7 +310,6 @@ DOI 10.5281/zenodo.21436550 · posters 10.5281/zenodo.21436552 · data: UNSD ISI
   </div>
   <p class="fkhint">Seeding = AGI layer × domain × language, then the AAB (آب) process over VGC — oracle-gated: no oracle, no glow. Opens the zistgah/fakir issue composer; nothing is written without you.</p>
 </aside>
-
 <script>/**
  * @license
  * Copyright 2010-2021 Three.js Authors
@@ -849,156 +846,15 @@ function ilmFilter(q){q=q.trim().toLowerCase();if(!q)return ILM_ITEMS.slice(0,40
   return starts.concat(has).slice(0,60);}
 function ilmCode(v){const m=/\(([A-Za-z0-9]{2,4})\)/.exec(v);return m?m[1]:(v.trim()?v.trim().split(/\s/)[0].slice(0,12):"");}
 
-/* ---------------- the display: FKCLOUD-v2 — a true point cloud inside the shared dome ----- */
-window.FAKIR_DISPLAY={highlight:()=>{},tick:()=>{}};
-function fakirDisplay(api){
-  const {THREE,G,camera,renderer,R,D,domePoint}=api;
-  const TWO=Math.PI*2, GAP=Math.PI/22;
-  const Y0=0.9, SPAN=5.2, yOf=li=>Y0+SPAN*li/(LAYERS.length-1);
-  const s0=Math.sin(D.phi0);
-  const rhMax=y=>R*Math.sqrt(Math.max(0,1-Math.pow(y/R+s0,2)))*0.86; /* stay inside the shell */
-  const sprite=(txt,px,color,div)=>{const c=document.createElement("canvas"),m=c.getContext("2d");
-    m.font=px+"px Palatino,Georgia,serif";c.width=Math.ceil(m.measureText(txt).width)+8;c.height=px+8;
-    const g=c.getContext("2d");g.font=px+"px Palatino,Georgia,serif";g.fillStyle=color;
-    g.textBaseline="top";g.fillText(txt,4,4);
-    const t=new THREE.CanvasTexture(c);t.minFilter=THREE.LinearFilter;
-    const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthTest:false}));
-    s.scale.set(c.width/div,c.height/div,1);return s;};
-  /* family azimuth sectors + rim labels (sectors give meaning; points scatter within) */
-  const usable=TWO-GAP*FAMS.length,total=LEAVES.length;let acc=0;
-  const famBase={},famSpan={},famN={},famIdx={};
-  FAMS.forEach(f=>{const fl=LEAVES.filter(n=>n.f===f.id),span=usable*(fl.length/total);
-    famBase[f.id]=acc+GAP/2;famSpan[f.id]=span;famN[f.id]=fl.length;
-    fl.forEach((n,i)=>famIdx[n.f+"|"+n.code]=i);
-    const mid=acc+GAP/2+span/2,lab=sprite(f.id,44,`hsl(${f.hue} 70% 62%)`,46);
-    lab.position.set(Math.cos(mid)*(R*0.99),0.55,Math.sin(mid)*(R*0.99));G.add(lab);
-    acc+=span+GAP;});
-  /* the AGI stack: ONE vertical axis through Ω, labelled — no rings */
-  G.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(
-    [new THREE.Vector3(0,Y0-0.25,0),new THREE.Vector3(0,Y0+SPAN+0.25,0)]),
-    new THREE.LineBasicMaterial({color:0x3a4680,transparent:true,opacity:.8})));
-  LAYERS.forEach((l,i)=>{const lab=sprite(l.id,22,"#8b93a7",58);
-    lab.position.set(0.55,yOf(i)+0.06,0);G.add(lab);});
-  const om=sprite("Ω",56,"#e8c85a",30);om.position.set(0,3.15,0);G.add(om);
-  const core=new THREE.Mesh(new THREE.SphereGeometry(0.42,24,24),
-    new THREE.MeshBasicMaterial({color:0xe8c85a}));core.position.y=2.5;G.add(core);
-  /* the 9,350 points — each individually scattered (ilm.codes technique), each floating */
-  const picks=[],animGeos=[];
-  const posOf=(k,li)=>{ /* deterministic per-point scatter */
-    const nd=LEAVES[k],f=nd.f,i=famIdx[f+"|"+nd.code];
-    const ang=famBase[f]+famSpan[f]*((i+.5)/famN[f])+(((k*7)%13)/13-.5)*0.07;
-    const y=yOf(li)+(((k*11+li*3)%9)/9-.5)*0.44;
-    const rm=rhMax(y);
-    const r=Math.min(rm,1.9+(((k*5+li*17)%23)/23)*(rm-1.9));
-    return [Math.cos(ang)*r,y,Math.sin(ang)*r];
-  };
-  const leafGlobal={};LEAVES.forEach((n,k)=>leafGlobal[n.f+"|"+n.code]=k);
-  FAMS.forEach(f=>{
-    const fl=LEAVES.filter(n=>n.f===f.id),n=fl.length*LAYERS.length;
-    const pos=new Float32Array(n*3),base=new Float32Array(n*3),
-          col=new Float32Array(n*3),ph=new Float32Array(n),fq=new Float32Array(n);
-    let j=0;const meta=[];
-    fl.forEach(nd=>{const k=leafGlobal[nd.f+"|"+nd.code],[r_,g_,b_]=rgbOf(nd);
-      LAYERS.forEach((l,li)=>{const p=posOf(k,li);
-        base[j*3]=pos[j*3]=p[0];base[j*3+1]=pos[j*3+1]=p[1];base[j*3+2]=pos[j*3+2]=p[2];
-        col[j*3]=r_;col[j*3+1]=g_;col[j*3+2]=b_;
-        ph[j]=((k*31+li*7)%97)/97*TWO;fq[j]=0.5+(((k*3+li)%7)/7)*0.8;
-        meta.push({n:nd,layer:l.id});j++;});});
-    const g=new THREE.BufferGeometry();
-    g.setAttribute("position",new THREE.BufferAttribute(pos,3));
-    g.setAttribute("color",new THREE.BufferAttribute(col,3));
-    const pts=new THREE.Points(g,new THREE.PointsMaterial({size:.17,vertexColors:true,
-      transparent:true,opacity:.95,sizeAttenuation:true}));
-    pts.userData.meta=meta;G.add(pts);picks.push(pts);
-    animGeos.push({g,base,ph,fq,n});});
-  /* per-point float — every point flying separate */
-  const tick=t=>{for(const A of animGeos){const a=A.g.attributes.position.array;
-      for(let j=0;j<A.n;j++){const s=Math.sin(t*A.fq[j]+A.ph[j]),c=Math.cos(t*A.fq[j]*0.7+A.ph[j]);
-        a[j*3]  =A.base[j*3]  +0.030*c;
-        a[j*3+1]=A.base[j*3+1]+0.055*s;
-        a[j*3+2]=A.base[j*3+2]+0.030*Math.sin(t*A.fq[j]*0.9+A.ph[j]*1.7);}
-      A.g.attributes.position.needsUpdate=true;}};
-  window.FAKIR_DISPLAY.tick=tick;
-  (function loop(){requestAnimationFrame(loop);
-    if(document.hidden||scrollY>innerHeight*1.4)return;
-    tick(performance.now()/1000);})();
-  /* search highlight overlay */
-  const hiG=new THREE.BufferGeometry();
-  hiG.setAttribute("position",new THREE.BufferAttribute(new Float32Array(1500*3),3));
-  const hiP=new THREE.Points(hiG,new THREE.PointsMaterial({size:.34,color:0xffffff,transparent:true,opacity:.95}));
-  hiP.visible=false;G.add(hiP);
-  window.FAKIR_DISPLAY.highlight=m=>{const mm=m.slice(0,150);if(!mm.length){hiP.visible=false;return;}
-    const a=hiG.attributes.position.array;let j=0;
-    mm.forEach(nd=>{const k=leafGlobal[nd.f+"|"+nd.code];if(k===undefined)return;
-      LAYERS.forEach((l,li)=>{const p=posOf(k,li);
-        a[j*3]=p[0];a[j*3+1]=p[1];a[j*3+2]=p[2];j++;});});
-    hiG.setDrawRange(0,j);hiG.attributes.position.needsUpdate=true;hiP.visible=true;};
-  /* picking: hover lineage tip, click opens the seeding panel */
-  const ray=new THREE.Raycaster();ray.params.Points={threshold:.085};
-  const ndc=new THREE.Vector2(),tip=document.getElementById("fktip");
-  let dx=0,dy=0,downAt=null;
-  const cast=e=>{const r=renderer.domElement.getBoundingClientRect();
-    ndc.x=((e.clientX-r.left)/r.width)*2-1;ndc.y=-((e.clientY-r.top)/r.height)*2+1;
-    ray.setFromCamera(ndc,camera);
-    const h=ray.intersectObjects(picks)[0];
-    return h?h.object.userData.meta[h.index]:null;};
-  renderer.domElement.addEventListener("pointerdown",e=>{downAt=[e.clientX,e.clientY];dx=dy=0;});
-  renderer.domElement.addEventListener("pointermove",e=>{
-    if(downAt){dx+=Math.abs(e.clientX-downAt[0]);dy+=Math.abs(e.clientY-downAt[1]);
-      tip.style.display="none";return;}
-    if(scrollY>innerHeight*0.4){tip.style.display="none";return;}
-    const m=cast(e);
-    if(m){tip.style.display="block";tip.style.left=(e.clientX+14)+"px";tip.style.top=(e.clientY+10)+"px";
-      tip.innerHTML=`<b>${m.n.f} ${m.n.code}</b> × <b>${m.layer}</b><br>${lineage(m.n).map(x=>x.name).join(" › ")}<br><span style="color:#9fd8c9">click → seed layer × domain × language</span>`;}
-    else tip.style.display="none";});
-  renderer.domElement.addEventListener("pointerup",e=>{
-    const was=downAt;downAt=null;
-    if(!was||dx+dy>6)return;
-    if(scrollY>innerHeight*0.4)return;
-    const m=cast(e);if(m)openPanel(m.n,m.layer);});
-  addEventListener("scroll",()=>{tip.style.display="none";},{passive:true});
-}
+/* FKCLOUD-v2 now lives in the dome lib (ZDOME_BUILD.pointcloud); the app supplies data + callbacks. */
+window.FAKIR_DISPLAY={highlight:m=>{window.ZDOME_POINTCLOUD&&window.ZDOME_POINTCLOUD.highlight(m);},tick:()=>{}};
 
 /* ---------------- shared-dome configuration ---------------- */
 window.ZISTGAH_DOME={
-  display:fakirDisplay,
-  domains:[
-    ["UN ISIC Rev.4","21 sections · 88 divisions · 238 groups · 419 classes — every industry."],
-    ["ILO ISCO-08","10 major · 43 sub-major · 130 minor · 436 unit groups — every occupation."],
-    ["UNESCO ISCED-F 2013","11 broad · 29 narrow · 80 detailed fields — every field of education."],
-    ["AGI Stack L0–L9","Hardware Definition → AGI/ASI — the Project ILM vertical axis, base to oculus."],
-    ["ILM Languages","Every ISO 15924 script and ISO 639-3 language — the third seeding dimension, live from ilm.codes."]],
-  marks:{
-    fakir:'<path d="M15 62 A31 31 0 0 1 71 62 Z"/><circle cx="43" cy="46" r="2.6"/><circle cx="31" cy="52" r="2.6"/><circle cx="55" cy="52" r="2.6"/><circle cx="43" cy="34" r="2.6"/><path d="M43 62 43 70"/>',
-    ukop:'<circle cx="43" cy="43" r="28"/><ellipse cx="43" cy="43" rx="28" ry="11"/><ellipse cx="43" cy="43" rx="11" ry="28"/><path d="M15 43 H71 M43 15 V71"/>',
-    aab:'<path d="M43 18 C58 38 62 48 62 56 a19 19 0 1 1 -38 0 c0-8 4-18 19-38 Z"/><path d="M32 56 q11 7 22 0"/>',
-    ilm:'<circle cx="43" cy="43" r="26"/><path d="M29 43 q14 -18 28 0 q-14 18 -28 0 Z"/><circle cx="43" cy="43" r="4"/>',
-    zist:'<path d="M20 60 A26 26 0 0 1 66 60 Z"/><path d="M30 60 38 44 46 60 M46 60 54 50 62 60"/><circle cx="43" cy="30" r="3"/>'},
-  art:[
-    ["FAKIR","fakir","The kernel of UKOP — every domain, every layer, oracle-gated."],
-    ["UKOP","ukop","Universal Knowledge Operating Platform — the civilizational blueprint."],
-    ["ILM","ilm","Any language — scripts × languages × the same AGI stack, at ilm.codes."],
-    ["AAB over VGC","aab","Verbatim intent · painted manifests · quests. No oracle, no glow."],
-    ["Zistgah","zist","The living habitat — this very dome, the same everywhere."]],
-  threads:[
-    ["Seed in three dimensions",
-     "AGI layer (L0–L9) × domain (FAKIR: ISIC · ISCO · ISCED) × language (ILM: ISO 15924 · ISO 639-3) — then build it with the AAB process.",
-     [["ILM explorer","https://ilm.codes/explore/"],["AAB","https://zistgah.org/aab/"]]],
-    ["FAKIR — software record",
-     "Kernel of UKOP; the exhaustive lattice as a floating point cloud inside the shared Zistgah dome.",
-     [["DOI 10.5281/zenodo.21436550","https://doi.org/10.5281/zenodo.21436550"],
-      ["repository","https://github.com/zistgah/fakir"]]],
-    ["UKOP · FAKIR · Kaivalyik — poster corpus",
-     "Eleven reference-architecture posters, one deposit; trademark & logo disclaimer inside.",
-     [["DOI 10.5281/zenodo.21436552","https://doi.org/10.5281/zenodo.21436552"],
-      ["TRADEMARKS.md","https://github.com/zistgah/fakir/blob/main/posters/TRADEMARKS.md"]]],
-    ["Data — exhaustive, count-gated",
-     "UNSD ISIC Rev.4 structure (verbatim) · ILO ISCO-08 · UNESCO ISCED-F 2013 Appendix 1 · ILM registries live.",
-     [["SOURCES.md","https://github.com/zistgah/fakir/blob/main/data/SOURCES.md"]]],
-    ["The dome itself — one dome, everywhere",
-     "This page is the zistgah.org landing file with nine marked seams; vendor/zistgah-dome is the lift-out lib.",
-     [["dome.js","https://github.com/zistgah/fakir/blob/main/vendor/zistgah-dome/dome.js"],
-      ["chakra-core","https://github.com/project-ilm/chakra"]]]]
+  displays:[{type:"pointcloud",data:FAKIR,yBase:4.3,ySpan:2.1,size:0.055,pick:0.075,
+    onPick:(n,l)=>openPanel(n,l),
+    tip:(m,lin)=>`<b>${m.n.f} ${m.n.code}</b> × <b>${m.layer}</b><br>${lin}<br><span style="color:#9fd8c9">click → seed layer × domain × language</span>`}],
+  /* domains · marks · art · threads · gallery · worlds · flight → dome.config.json */
 };
 
 /* ---------------- seeding: AGI layer × domain × language ---------------- */
@@ -1224,7 +1080,7 @@ function downgrade(){                       // last resort, once, in order of co
 }
 
 /* ---------- settings (persisted; density rebuilds the sky) ---------- */
-const S={density:MOBILE?0.8:1,glints:true,meteors:true,drone:false,droneMode:'off',gravity:false, /*FLIGHT-MOD: altitude hold is the default*/
+const S={density:MOBILE?0.8:1,glints:true,meteors:true,drone:false,droneMode:'off',gravity:false,sYaw:0.45,sPitch:1,sRoll:1,debug:false, /*FLIGHT-MOD: hold default, sensitivities, debug*/
          mouseStick:false,cam:'interior',vr:false,dpr:null,hz:null};
 try{Object.assign(S,JSON.parse(localStorage.getItem('zistgah-scene')||'{}'))}catch(e){}
 if(S.dpr)Q.dpr=S.dpr;                 // Q is defined above; honour the saved choice
@@ -1398,7 +1254,7 @@ function drawDial(){ZW.dial(dialCv,C,dCur());if(dialTex)dialTex.needsUpdate=true
 
 /* ---------- 3D ---------- */
 const R=10;
-let camera,renderer,scene,G,shellTex,dialTex,shellMat,ok3d=false,D=null;
+let camera,renderer,scene,G,WG=null,shellTex,dialTex,shellMat,ok3d=false,D=null; /*WORLD-MOD*/
 let pedBase=[],glintMats=[],cols3d=[],drone=null,fpvProps=[],yaw=0,pitch=0,dolly=7.4;
 let yawT=0,pitchT=0,yawV=0;          // targets + inertia — input rate no longer touches the GPU
 function plaqueTex(name,w2,h2,fs){
@@ -1445,7 +1301,7 @@ function initGL(){
       gems[i*3]=D.ocuR*1.05*Math.cos(a);gems[i*3+1]=D.ocuY+0.05;gems[i*3+2]=D.ocuR*1.05*Math.sin(a)}
     const gg2=new THREE.BufferGeometry();
     gg2.setAttribute('position',new THREE.BufferAttribute(gems,3));
-    scene.add(new THREE.Points(gg2,new THREE.PointsMaterial({color:0xffe9b0,size:0.3,
+    G.add(new THREE.Points(gg2,new THREE.PointsMaterial({color:0xffe9b0,size:0.3, /*WORLD-MOD: oculus jewels ride the hall*/
       transparent:true,opacity:0.95,blending:THREE.AdditiveBlending,sizeAttenuation:true})));
     shellTex=new THREE.CanvasTexture(off);
     shellMat=new THREE.MeshBasicMaterial({map:shellTex,side:THREE.BackSide,transparent:true,
@@ -1456,7 +1312,7 @@ function initGL(){
     const disc=new THREE.Mesh(new THREE.CircleGeometry(D.ocuR*0.97,64),
       new THREE.MeshBasicMaterial({map:dialTex,transparent:true,side:THREE.DoubleSide,depthWrite:false}));
     disc.rotateX(Math.PI/2);disc.position.y=D.ocuY-0.03;
-    scene.add(disc);
+    G.add(disc); /*WORLD-MOD: the chakra dial is attached — dome and chakra are one entity*/
     rebuildStars();
     scene.add(new THREE.AmbientLight(0x2a3a55,1.1));
     const oculight=new THREE.PointLight(0xffd9a0,1.5,60);oculight.position.set(0,9.2,0);
@@ -1589,8 +1445,17 @@ function initGL(){
      craft.lander.visible=false;scene.add(craft.lander);}
 
     /* ---- the worlds: Earth below the glass, habitats above ---- */
+    WG=new THREE.Group();scene.add(WG); /*WORLD-MOD: worlds group — turns with the hall*/
     for(const w of ZP.worlds){
       const grp=new THREE.Group();grp.position.set(w.at[0],w.at[1],w.at[2]);
+      if(w.kind==='station'){ /*WORLD-MOD: orbital station body*/
+        const ring=new THREE.Mesh(new THREE.TorusGeometry(w.r,w.r*0.12,10,48),goldM);
+        ring.rotation.x=Math.PI/2;grp.add(ring);
+        grp.add(new THREE.Mesh(new THREE.SphereGeometry(w.r*0.28,16,12),stone));
+        for(let a2=0;a2<4;a2++){const sp2=new THREE.Mesh(new THREE.CylinderGeometry(w.r*0.04,w.r*0.04,w.r*2,8),stone);
+          sp2.rotation.z=Math.PI/2;sp2.rotation.y=a2*Math.PI/4;grp.add(sp2);}
+        grp.add(new THREE.PointLight(0x7fd4e8,1.0,50));
+      }else{
       grp.add(new THREE.Mesh(new THREE.SphereGeometry(w.r*0.995,48,32),
         new THREE.MeshStandardMaterial({color:w.tint,roughness:.92,metalness:.05})));
       grp.add(new THREE.Mesh(new THREE.SphereGeometry(w.r*1.035,32,20),
@@ -1612,8 +1477,9 @@ function initGL(){
         grp.add(new THREE.LineSegments(gg3,new THREE.LineBasicMaterial(
           {color:0x5a6e96,transparent:true,opacity:0.10})));
       }
+      } /*WORLD-MOD: station/planet split*/
       if(w.habitat){                                          // a small dome, floating over it
-        const hd=w.habitat.domeR, hy=w.r+hd*0.05;
+        const hd=w.habitat.domeR, hy=__surfY(w)+hd*0.05; /*WORLD-MOD*/
         const hdm=new THREE.Mesh(
           new THREE.SphereGeometry(hd,20,12,0,Math.PI*2,0,Math.PI/2),
           new THREE.MeshBasicMaterial({color:0xc9a44e,wireframe:true,transparent:true,opacity:0.5}));
@@ -1624,16 +1490,19 @@ function initGL(){
         glass.rotation.x=-Math.PI/2;glass.position.y=hy+0.02;grp.add(glass);
         const beacon=new THREE.PointLight(0xffd9a0,1.2,40);beacon.position.y=hy+hd*0.6;grp.add(beacon);
       }
-      scene.add(grp);
+      WG.add(grp); /*WORLD-MOD*/
       worldMeshes.push({w,grp,center:new THREE.Vector3(w.at[0],w.at[1]+ (w.habitat?w.r+w.habitat.domeR*0.5:0),w.at[2])});
     }
-    BND=boundsFor('dome',ZP);F=flightInit();
+    /* spawn + worlds config applied in __boot, before initGL — pure data, GL-independent */
     PILOT=S.droneMode==='pilot';mouseOn=!!S.mouseStick;
     /* FPV edge props (children of the camera; added only in FPV) */
     fpvProps=[-1,1].map(sgn=>{
       const p=new THREE.Mesh(new THREE.CircleGeometry(0.22,10),
         new THREE.MeshBasicMaterial({color:0xaebccb,transparent:true,opacity:0.3,side:THREE.DoubleSide}));
       p.position.set(sgn*0.5,-0.34,-1.05);return p;});
+    if(CFG.displays)for(const dd of CFG.displays){try{ZDOME_BUILD[dd.type]&&ZDOME_BUILD[dd.type](dd,{THREE,scene,G,camera,renderer,R,D,domePoint,makeDome});}catch(e){console.error('display '+dd.type,e)}} /*ZDOME-SEAM:displays*/
+    if(CFG.gallery){try{ZDOME_BUILD.gallery(CFG.gallery,{THREE,scene,G,camera,renderer,R,D});}catch(e){console.error('gallery',e)}} /*ZDOME-SEAM:gallery*/
+    if(CFG.videos){try{ZDOME_BUILD.videos(CFG.videos,{THREE,scene,G,camera,renderer,R,D});}catch(e){console.error('videos',e)}} /*ZDOME-SEAM:videos*/
     if(CFG.display){try{CFG.display({THREE,scene,G,camera,renderer,R,D,domePoint,makeDome});}catch(e){console.error('ZDOME display',e)}}   /*ZDOME-SEAM:display*/
     ok3d=true;
   }catch(e){document.getElementById('gl').style.display='none'}
@@ -1644,10 +1513,10 @@ function rebuildStars(){
   const N=Math.round((MOBILE?3500:6000)*S.density),sp=new Float32Array(N*3);
   for(let i=0;i<N;i++){let x,y,z;do{x=Math.random()*2-1;y=Math.random()*2-1;z=Math.random()*2-1}
     while(x*x+y*y+z*z>1||y<-0.1);
-    const L2=55/Math.hypot(x,y,z);sp[i*3]=x*L2;sp[i*3+1]=y*L2;sp[i*3+2]=z*L2}
+    const L2=(70+Math.random()*90)/Math.hypot(x,y,z); /*STAR-MOD: deep shell 70–160*/sp[i*3]=x*L2;sp[i*3+1]=y*L2;sp[i*3+2]=z*L2}
   const sg=new THREE.BufferGeometry();
   sg.setAttribute('position',new THREE.BufferAttribute(sp,3));
-  starsMesh=new THREE.Points(sg,new THREE.PointsMaterial({color:0xf2ecdd,size:0.14,
+  starsMesh=new THREE.Points(sg,new THREE.PointsMaterial({color:0xf2ecdd,size:0.11, /*STAR-MOD*/
     transparent:true,opacity:0.8,sizeAttenuation:true}));
   G.add(starsMesh);
 }
@@ -1677,6 +1546,200 @@ const ZP={
     lander:{label:"Landing system",  g:0.165,thrust:0.55, hud:"DESCENT"}   // lunar gravity
   }
 };
+
+/*ZDOME-BUILTIN-DISPLAYS — pointcloud (after ilm.codes/explore), viewer's gallery, video screens.
+  All configurable; all register into HITX or their own window-level picking. (c) Abhishek Choudhary.*/
+const ZDOME_BUILD={};
+ZDOME_BUILD.pointcloud=function(spec,api){
+  const {THREE,G,camera,R,D}=api,TWO=Math.PI*2;
+  const DATA=spec.data;if(!DATA||!DATA.nodes)return;
+  const FAMS=DATA.families,LAYERS=DATA.layers,NODES=DATA.nodes;
+  const byKey={};NODES.forEach(n=>byKey[n.f+"|"+n.code]=n);
+  const leafLvl={};FAMS.forEach(f=>leafLvl[f.id]=Math.max(...NODES.filter(n=>n.f===f.id).map(n=>n.level)));
+  const LEAVES=NODES.filter(n=>n.level===leafLvl[n.f]);
+  const lineage=n=>{const L=[];let x=n;while(x){L.unshift(x);x=x.parent?byKey[x.f+"|"+x.parent]:null;}return L;};
+  const topIdx={};FAMS.forEach(f=>NODES.filter(n=>n.f===f.id&&n.level===1).forEach((n,i)=>topIdx[n.f+"|"+n.code]=i));
+  const rgbOf=n=>{const f=FAMS.find(x=>x.id===n.f),t=lineage(n)[0],i=topIdx[t.f+"|"+t.code]||0;
+    const c=document.createElement("canvas").getContext("2d");
+    c.fillStyle=`hsl(${f.hue} 66% ${40+Math.round(26*i/Math.max(1,f.counts[0]-1))}%)`;
+    c.fillRect(0,0,1,1);const d=c.getImageData(0,0,1,1).data;return[d[0]/255,d[1]/255,d[2]/255];};
+  const Y0=spec.yBase!=null?spec.yBase:4.3, SPAN=spec.ySpan!=null?spec.ySpan:2.1;
+  const yOf=li=>Y0+SPAN*li/Math.max(1,LAYERS.length-1);
+  const s0=Math.sin(D.phi0);
+  const rhMax=y=>R*Math.sqrt(Math.max(0,1-Math.pow(y/R+s0,2)))*0.80;
+  const sprite=(txt,px,color,div)=>{const c=document.createElement("canvas"),m=c.getContext("2d");
+    m.font=px+"px Palatino,Georgia,serif";c.width=Math.ceil(m.measureText(txt).width)+8;c.height=px+8;
+    const g=c.getContext("2d");g.font=px+"px Palatino,Georgia,serif";g.fillStyle=color;
+    g.textBaseline="top";g.fillText(txt,4,4);
+    const t=new THREE.CanvasTexture(c);t.minFilter=THREE.LinearFilter;
+    const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthTest:false}));
+    s.scale.set(c.width/div,c.height/div,1);return s;};
+  const usable=TWO-(Math.PI/22)*FAMS.length,total=LEAVES.length;let acc=0;
+  const famBase={},famSpan={},famN={},famIdx={};
+  FAMS.forEach(f=>{const fl=LEAVES.filter(n=>n.f===f.id),span=usable*(fl.length/total);
+    famBase[f.id]=acc+(Math.PI/44);famSpan[f.id]=span;famN[f.id]=fl.length;
+    fl.forEach((n,i)=>famIdx[n.f+"|"+n.code]=i);
+    const mid=acc+(Math.PI/44)+span/2,lab=sprite(f.id,40,`hsl(${f.hue} 70% 62%)`,60);
+    lab.position.set(Math.cos(mid)*(rhMax(Y0)+0.6),Y0-0.35,Math.sin(mid)*(rhMax(Y0)+0.6));G.add(lab);
+    acc+=span+(Math.PI/22);});
+  if(spec.axis!==false){
+    G.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+      [new THREE.Vector3(0,Y0-0.25,0),new THREE.Vector3(0,Y0+SPAN+0.25,0)]),
+      new THREE.LineBasicMaterial({color:0x3a4680,transparent:true,opacity:.8})));
+    LAYERS.forEach((l,i)=>{const lab=sprite(l.id,20,"#8b93a7",62);
+      lab.position.set(0.42,yOf(i)+0.04,0);G.add(lab);});}
+  const posOf=(k,li)=>{const nd=LEAVES[k],f=nd.f,i=famIdx[f+"|"+nd.code];
+    const ang=famBase[f]+famSpan[f]*((i+.5)/famN[f])+(((k*7)%13)/13-.5)*0.07;
+    const y=yOf(li)+(((k*11+li*3)%9)/9-.5)*0.30;
+    const rm=rhMax(y);
+    const r=Math.min(rm,0.9+(((k*5+li*17)%23)/23)*(rm-0.9));
+    return [Math.cos(ang)*r,y,Math.sin(ang)*r];};
+  const leafGlobal={};LEAVES.forEach((n,k)=>leafGlobal[n.f+"|"+n.code]=k);
+  const picks=[],animGeos=[];
+  FAMS.forEach(f=>{const fl=LEAVES.filter(n=>n.f===f.id),n=fl.length*LAYERS.length;
+    const pos=new Float32Array(n*3),base=new Float32Array(n*3),
+          col=new Float32Array(n*3),ph=new Float32Array(n),fq=new Float32Array(n);
+    let j=0;const meta=[];
+    fl.forEach(nd=>{const k=leafGlobal[nd.f+"|"+nd.code],[r_,g_,b_]=rgbOf(nd);
+      LAYERS.forEach((l,li)=>{const p=posOf(k,li);
+        base[j*3]=pos[j*3]=p[0];base[j*3+1]=pos[j*3+1]=p[1];base[j*3+2]=pos[j*3+2]=p[2];
+        col[j*3]=r_;col[j*3+1]=g_;col[j*3+2]=b_;
+        ph[j]=((k*31+li*7)%97)/97*TWO;fq[j]=0.5+(((k*3+li)%7)/7)*0.8;
+        meta.push({n:nd,layer:l.id});j++;});});
+    const g=new THREE.BufferGeometry();
+    g.setAttribute("position",new THREE.BufferAttribute(pos,3));
+    g.setAttribute("color",new THREE.BufferAttribute(col,3));
+    const pts=new THREE.Points(g,new THREE.PointsMaterial({size:spec.size!=null?spec.size:0.055,
+      vertexColors:true,transparent:true,opacity:.92,sizeAttenuation:true}));
+    pts.userData.meta=meta;G.add(pts);picks.push(pts);
+    animGeos.push({g,base,ph,fq,n});});
+  const tick=t=>{for(const A of animGeos){const a=A.g.attributes.position.array;
+      for(let j=0;j<A.n;j++){const sn=Math.sin(t*A.fq[j]+A.ph[j]);
+        a[j*3]  =A.base[j*3]  +0.022*Math.cos(t*A.fq[j]*0.7+A.ph[j]);
+        a[j*3+1]=A.base[j*3+1]+0.040*sn;
+        a[j*3+2]=A.base[j*3+2]+0.022*Math.sin(t*A.fq[j]*0.9+A.ph[j]*1.7);}
+      A.g.attributes.position.needsUpdate=true;}};
+  (function loop(){requestAnimationFrame(loop);
+    if(document.hidden||scrollY>innerHeight*1.4)return;
+    tick(performance.now()/1000);})();
+  const hiG=new THREE.BufferGeometry();
+  hiG.setAttribute("position",new THREE.BufferAttribute(new Float32Array(1500*3),3));
+  const hiP=new THREE.Points(hiG,new THREE.PointsMaterial({size:.20,color:0xffffff,transparent:true,opacity:.95}));
+  hiP.visible=false;G.add(hiP);
+  const highlight=m=>{const mm=(m||[]).slice(0,150);if(!mm.length){hiP.visible=false;return;}
+    const a=hiG.attributes.position.array;let j=0;
+    mm.forEach(nd=>{const k=leafGlobal[nd.f+"|"+nd.code];if(k===undefined)return;
+      LAYERS.forEach((l,li)=>{const p=posOf(k,li);
+        a[j*3]=p[0];a[j*3+1]=p[1];a[j*3+2]=p[2];j++;});});
+    hiG.setDrawRange(0,j);hiG.attributes.position.needsUpdate=true;hiP.visible=true;};
+  window.ZDOME_POINTCLOUD={highlight,tick,posOf,count:LEAVES.length*LAYERS.length};
+  /* window-level picking — #gl is pointer-events:none by design, so we listen like the dome does */
+  const ray=new THREE.Raycaster();ray.params.Points={threshold:spec.pick!=null?spec.pick:0.075};
+  const ndc=new THREE.Vector2();
+  let tipEl=document.getElementById("fktip");
+  if(!tipEl){tipEl=document.createElement("div");tipEl.id="fktip";
+    tipEl.style.cssText="position:fixed;pointer-events:none;background:#0d1526;border:1px solid #c9a44e;border-radius:6px;padding:.32em .55em;font:13px/1.45 system-ui;color:#e9e4d6;display:none;max-width:300px;z-index:60";
+    document.body.appendChild(tipEl);}
+  const GUARD="#fkpanel,#pop,#hot,#settings,#calbar,#fractal,#ytov,#zdbg,input,textarea,select,button,a,summary,label";
+  const cast=e=>{const cv=api.renderer&&api.renderer.domElement;if(!cv)return null;
+    const r=cv.getBoundingClientRect?cv.getBoundingClientRect():{left:0,top:0,width:innerWidth,height:innerHeight};
+    ndc.x=((e.clientX-r.left)/(r.width||innerWidth))*2-1;
+    ndc.y=-((e.clientY-r.top)/(r.height||innerHeight))*2+1;
+    ray.setFromCamera(ndc,camera);
+    const h=ray.intersectObjects(picks)[0];
+    return h?h.object.userData.meta[h.index]:null;};
+  let dxy=0,down=null;
+  addEventListener("pointerdown",e=>{if(e.target.closest&&e.target.closest(GUARD))return;
+    down=[e.clientX,e.clientY];dxy=0;});
+  addEventListener("pointermove",e=>{
+    if(down){dxy+=Math.abs(e.clientX-down[0])+Math.abs(e.clientY-down[1]);tipEl.style.display="none";return;}
+    if(scrollY>innerHeight*0.4||(e.target.closest&&e.target.closest(GUARD))){tipEl.style.display="none";return;}
+    const m=cast(e);
+    if(m){tipEl.style.display="block";tipEl.style.left=(e.clientX+14)+"px";tipEl.style.top=(e.clientY+10)+"px";
+      const lin=lineage(m.n).map(x=>x.name).join(" › ");
+      tipEl.innerHTML=spec.tip?spec.tip(m,lin):("<b>"+m.n.f+" "+m.n.code+"</b> × <b>"+m.layer+"</b><br>"+lin);}
+    else tipEl.style.display="none";},{passive:true});
+  addEventListener("pointerup",e=>{const was=down;down=null;
+    if(!was||dxy>7)return;
+    if(scrollY>innerHeight*0.4)return;
+    if(e.target.closest&&e.target.closest(GUARD))return;
+    const m=cast(e);if(m&&spec.onPick)spec.onPick(m.n,m.layer);});
+  addEventListener("scroll",()=>{tipEl.style.display="none";},{passive:true});
+};
+ZDOME_BUILD.gallery=function(spec,api){
+  const {THREE,G}=api;
+  const imgs=(spec&&spec.images)||[];if(!imgs.length)return;
+  const N=Math.min(spec.slots||6,imgs.length), RAD=spec.radius||7.4, YC=spec.y!=null?spec.y:1.35;
+  const W2=spec.w||2.1,H2=spec.h||1.4;
+  const loader=new THREE.TextureLoader();loader.setCrossOrigin("anonymous");
+  const slots=[];
+  for(let i=0;i<N;i++){const a=(i+.5)/N*Math.PI*2;
+    const frame=new THREE.Group();
+    frame.position.set(Math.cos(a)*RAD,YC,Math.sin(a)*RAD);
+    frame.lookAt(0,YC,0);
+    frame.add(new THREE.Mesh(new THREE.PlaneGeometry(W2+0.12,H2+0.12),
+      new THREE.MeshStandardMaterial({color:0xc9a44e,metalness:.9,roughness:.3})));
+    const mat=new THREE.MeshBasicMaterial({color:0x101b31});
+    const pic=new THREE.Mesh(new THREE.PlaneGeometry(W2,H2),mat);pic.position.z=0.01;
+    frame.add(pic);
+    const leg=new THREE.Mesh(new THREE.CylinderGeometry(0.03,0.05,YC,8),
+      new THREE.MeshStandardMaterial({color:0x1c2438,metalness:.4,roughness:.6}));
+    leg.position.y=-YC/2-0.05;frame.add(leg);
+    G.add(frame);
+    const slot={i,mat,idx:i};slots.push(slot);
+    window.ZDOME_HIT&&ZDOME_HIT({v:frame.position.clone(),r:44,name:spec.title||"Viewer's gallery",
+      sub:()=>{const u=imgs[slot.idx];return (u.split("/").pop())+" — click to open";},
+      get subText(){return this.sub()},
+      actLabel:"◈ Open the poster",act:()=>open(imgs[slot.idx],"_blank","noopener")});
+  }
+  const show=(slot,idx)=>{slot.idx=idx%imgs.length;
+    loader.load(imgs[slot.idx],t=>{slot.mat.map=t;slot.mat.color.set(0xffffff);slot.mat.needsUpdate=true;},
+      undefined,()=>{});};
+  slots.forEach(s2=>show(s2,s2.i));
+  let off=0;
+  setInterval(()=>{off++;slots.forEach(s2=>show(s2,s2.i+off));},(spec.intervalS||18)*1000);
+};
+ZDOME_BUILD.videos=function(spec,api){
+  const {THREE,G}=api;
+  const items=(spec&&spec.items)||[];if(!items.length)return;
+  const N=items.length,RAD=spec.radius||8.5,YC=spec.y!=null?spec.y:3.3,W2=2.5,H2=1.42;
+  const loader=new THREE.TextureLoader();loader.setCrossOrigin("anonymous");
+  const ph=(title)=>{const c=document.createElement("canvas");c.width=512;c.height=288;
+    const g=c.getContext("2d");g.fillStyle="#0d1526";g.fillRect(0,0,512,288);
+    g.fillStyle="#c9a44e";g.beginPath();g.moveTo(230,110);g.lineTo(230,178);g.lineTo(300,144);g.fill();
+    g.fillStyle="#e9e4d6";g.font="22px system-ui";g.textAlign="center";g.fillText(title.slice(0,38),256,232);
+    return new THREE.CanvasTexture(c);};
+  items.forEach((it,i)=>{const a=Math.PI*0.5+(i-(N-1)/2)*0.55;
+    const scr=new THREE.Group();
+    scr.position.set(Math.cos(a)*RAD,YC,Math.sin(a)*RAD);scr.lookAt(0,YC,0);
+    const mat=new THREE.MeshBasicMaterial({map:ph(it.title||it.id)});
+    scr.add(new THREE.Mesh(new THREE.PlaneGeometry(W2,H2),mat));
+    scr.add(new THREE.Mesh(new THREE.PlaneGeometry(W2+0.1,H2+0.1),
+      new THREE.MeshBasicMaterial({color:0x22304d})).translateZ(-0.01));
+    G.add(scr);
+    loader.load("https://img.youtube.com/vi/"+it.id+"/hqdefault.jpg",
+      t=>{mat.map=t;mat.needsUpdate=true;},undefined,()=>{});
+    window.ZDOME_HIT&&ZDOME_HIT({v:scr.position.clone(),r:46,name:it.title||("Video "+it.id),
+      sub:"YouTube — plays in an overlay above the dome",actLabel:"▶ Play",
+      act:()=>{let ov=document.getElementById("ytov");
+        if(!ov){ov=document.createElement("div");ov.id="ytov";
+          ov.style.cssText="position:fixed;inset:0;z-index:90;background:rgba(5,7,15,.86);display:flex;align-items:center;justify-content:center";
+          ov.innerHTML='<div style="position:relative;width:min(92vw,960px);aspect-ratio:16/9"><button id="ytx" style="position:absolute;top:-38px;right:0;font:16px system-ui;color:#e9e4d6;background:#101b31;border:1px solid #c9a44e;border-radius:6px;padding:.2em .7em;cursor:pointer">✕ close</button><iframe id="ytif" style="width:100%;height:100%;border:1px solid #c9a44e;border-radius:10px" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>';
+          document.body.appendChild(ov);
+          ov.querySelector("#ytx").onclick=()=>{ov.style.display="none";ov.querySelector("#ytif").src="";};}
+        ov.style.display="flex";
+        ov.querySelector("#ytif").src="https://www.youtube-nocookie.com/embed/"+it.id+"?autoplay=1";}});
+  });
+};
+
+const __surfY=w=>w.kind==='station'?w.r*0.30:w.r; /*WORLD-MOD: where the habitat floor sits*/
+function __worldsCfg(){ /*ZDOME-SEAM:worlds — worlds, patches and flight overrides from config*/
+  const w=CFG.worlds;
+  if(w){ if(Array.isArray(w))ZP.worlds=w;
+    else{ if(w.patch)for(const p of w.patch){const t=ZP.worlds.find(x=>x.id===p.id);if(t)Object.assign(t,p);}
+          if(w.add)ZP.worlds.push(...w.add); } }
+  if(CFG.flightPatch)Object.assign(ZP.flight,CFG.flightPatch);
+}
 /* the glass floor: the drone may never go below it, on any world */
 function boundsFor(zone,ZP){
   const R=ZP.dome.R;
@@ -1693,7 +1756,7 @@ function boundsFor(zone,ZP){
   const w=ZP.worlds.find(x=>x.id===zone);
   const dR=w.habitat.domeR;
   return {yMin:0.2,yMax:dR*0.98,kind:"world",world:w,
-    cx:w.at[0], cz:w.at[2], cy:w.at[1]+w.r,        // the habitat floor sits on the surface
+    cx:w.at[0], cz:w.at[2], cy:w.at[1]+__surfY(w), /*WORLD-MOD*/        // the habitat floor sits on the surface
     rAt:(y)=>{const yy=Math.max(0,Math.min(dR*0.999,y));
       return Math.max(0.4,Math.sqrt(Math.max(0,dR*dR-yy*yy))*0.94)}};
 }
@@ -1726,7 +1789,7 @@ function embodimentOn(zone,ZP){
 /* a docking point just inside a habitat dome, on the side facing the hall */
 function dockPoint(w,ZP){
   const n=Math.hypot(w.at[0],w.at[2])||1;
-  return [w.at[0]-w.at[0]/n*(w.r*0.15), w.at[1]+w.r+w.habitat.domeR*0.35,
+  return [w.at[0]-w.at[0]/n*(w.r*0.15), w.at[1]+__surfY(w)+w.habitat.domeR*0.35, /*WORLD-MOD*/
           w.at[2]-w.at[2]/n*(w.r*0.15)];
 }
 /* COAST (chakra-core) → 3D line buffer on a sphere. Encoding: [lon×10, lat×10] */
@@ -1746,6 +1809,14 @@ function coastBuffer(COAST,radius){
 }
 /*WORLDS-END*/
 /*FLIGHT-BEGIN*/
+function __spawn(){ /*ZDOME-SEAM:spawn — cinematic start at a distance by default*/
+  const sp=(CFG.flight&&CFG.flight.spawn)||{zone:'space',pos:[0,20,26],yaw:Math.PI};
+  ZONE=sp.zone||'dome';BND=boundsFor(ZONE,ZP);
+  const f=flightInit();
+  if(sp.pos){f.x=sp.pos[0];f.y=sp.pos[1];f.z=sp.pos[2];}
+  if(sp.yaw!=null)f.yaw=sp.yaw;
+  return f;
+}
 function flightInit(){
   return {x:0,y:2.2,z:3.4, vx:0,vy:0,vz:0, yaw:Math.PI, pitch:0, roll:0, thr:0.5, armed:true};
 }
@@ -1753,23 +1824,24 @@ function flightStep(F,u,dt,B,EMB){
   dt=Math.min(dt,0.05);
   const E=ZP.embodiments[EMB||'quad'];
   const RATE=ZP.flight.rate, LEVEL=ZP.flight.level;
-  F.yaw  += u.yaw*RATE*dt;
-  F.pitch = F.pitch + (u.pitch*0.5 - F.pitch)*Math.min(1,LEVEL*dt);
-  F.roll  = F.roll  + (u.roll *0.5 - F.roll )*Math.min(1,LEVEL*dt);
+  F.yaw  += u.yaw*RATE*(S.sYaw!=null?S.sYaw:0.45)*dt; /*FLIGHT-MOD: yaw slowed + configurable*/
+  F.pitch = F.pitch + (u.pitch*0.5*(S.sPitch!=null?S.sPitch:1) - F.pitch)*Math.min(1,LEVEL*dt); /*FLIGHT-MOD*/
+  F.roll  = F.roll  + (u.roll *0.5*(S.sRoll!=null?S.sRoll:1) - F.roll )*Math.min(1,LEVEL*dt); /*FLIGHT-MOD*/
   const MT=ZP.flight.maxTilt;
   F.pitch = Math.max(-MT,Math.min(MT,F.pitch));
   F.roll  = Math.max(-MT,Math.min(MT,F.roll));
   F.thr   = Math.max(0,Math.min(1,F.thr + u.thr*0.9*dt));
   const sp=Math.sin(F.pitch),cp=Math.cos(F.pitch),sr=Math.sin(F.roll),cr=Math.cos(F.roll),
         sy=Math.sin(F.yaw),cy=Math.cos(F.yaw);
-  const upX=  sr*cy + cr*sp*sy, upY = cr*cp, upZ = -sr*sy + cr*sp*cy;
-  const G=ZP.flight.g*E.g, HOVER=(ZP.flight.g/ZP.flight.hoverThr)*E.thrust;
+  const upX= -sr*cy + cr*sp*sy, upY = cr*cp, upZ =  sr*sy + cr*sp*cy; /*FLIGHT-MOD: roll is thrust-vectored — tilt right, go right*/
+  const wG=(B&&B.world&&B.world.gravity!=null)?B.world.gravity:E.g; /*WORLD-MOD: gravity per world*/
+  const G=ZP.flight.g*wG, HOVER=(ZP.flight.g/ZP.flight.hoverThr)*E.thrust;
   const T=F.thr*HOVER;
-  if(S.gravity){ /*FLIGHT-MOD: ballistic (the original physics) only when gravity is switched on*/
+  if(S.gravity){ /*FLIGHT-MOD: ballistic — the original physics — only when gravity is on*/
     F.vx += (upX*T)*dt;
     F.vy += (upY*T - G)*dt;
     F.vz += (upZ*T)*dt;
-  }else{ /*FLIGHT-MOD: altitude hold — throttle commands climb rate, no gravity term*/
+  }else{ /*FLIGHT-MOD: altitude hold — throttle commands climb rate*/
     F.vx += (upX*HOVER*ZP.flight.hoverThr)*dt;
     F.vz += (upZ*HOVER*ZP.flight.hoverThr)*dt;
     const vyT=u.thr*2.4;
@@ -1876,18 +1948,25 @@ function placeCamera(t,time){
           ZONE=TRANSIT.dest; BND=boundsFor(ZONE,ZP);
           setEmbodiment(embodimentOn(ZONE,ZP));
           const w=ZP.worlds.find(x=>x.id===ZONE);
-          F=flightInit();F.x=w.at[0];F.z=w.at[2];F.y=w.at[1]+w.r+0.6;
+          F=flightInit();F.x=w.at[0];F.z=w.at[2];F.y=w.at[1]+__surfY(w)+0.6; /*WORLD-MOD*/
           TRANSIT=null;
           hudMsg('arrived · '+w.label+' · '+ZP.embodiments[EMB].label);
         }
       }else{
         flightStep(F,readSticks(),dt,BND,EMB);
         if(ZONE==='dome'&&escaped(F,ZP)){            /* threaded the oculus */
+          if(WG){const wy=WG.rotation.y;WG.rotation.y=0; /*WORLD-MOD: bake hall yaw into the pilot frame at escape*/
+            const cw=Math.cos(wy),sw=Math.sin(wy),fx=F.x,fz=F.z;
+            F.x=fx*cw - fz*sw; F.z=fx*sw + fz*cw; F.yaw-=wy;}
           ZONE='space';BND=boundsFor('space',ZP);
           hudMsg('clear of the dome · Moon and Mars habitats are in view · tap one to launch');
         }
         active.position.set(F.x,F.y,F.z);
         active.rotation.set(F.pitch,F.yaw,F.roll);   // the CRAFT tilts
+        if(!placeCamera._em||time-placeCamera._em>100){placeCamera._em=time; /*FLIGHT-MOD: drone state emitter — 10 Hz*/
+          const det={id:(CFG.drone&&CFG.drone.id)||'local',t:Date.now(),zone:ZONE,emb:EMB,
+            x:F.x,y:F.y,z:F.z,yaw:F.yaw,pitch:F.pitch,roll:F.roll,vx:F.vx,vy:F.vy,vz:F.vz,thr:F.thr};
+          window.ZDOME_DRONE=det;dispatchEvent(new CustomEvent('zdome:drone',{detail:det}));}
         if(active.userData.props){const spin=(0.35+F.thr)*0.55;
           for(const pr of active.userData.props)pr.rotation.z=time*spin*0.01;}
       }
@@ -1937,10 +2016,10 @@ function placeCamera(t,time){
 }
 
 /* ---------- oculus scrub + pedestal/pillar attention ---------- */
-const ART_SUB=Object.assign({},{"Kaivalya AGI":"Pursuing truth, well-being and wisdom.",
+const ART_SUB={"Kaivalya AGI":"Pursuing truth, well-being and wisdom.",
   "AyeTRIAD Loop":"A self-evolving loop of observation, synthesis and global feedback.",
   "Holy Grail Lab":"A multi-suitcase research laboratory for civilization-scale problems.",
-  "Zistgah":"The living habitat — integrating technology, nature and humanity."},CFG.exhibitSubs||{}); /*ZDOME-SEAM:exhibitSubs*/
+  "Zistgah":"The living habitat — integrating technology, nature and humanity."};
 const rotY=v=>v.clone().applyAxisAngle(new THREE.Vector3(0,1,0),yaw);
 function projectUI(){
   if(!ok3d)return;
@@ -1956,12 +2035,20 @@ function projectUI(){
     sl.style.left=px+'px';sl.style.top=(py+rr+8)+'px';}
 }
 const pop=()=>document.getElementById('pop');
+function __dbg(){ /*UI-MOD: on-screen variables for debug rounds*/
+  let el=document.getElementById('zdbg');
+  if(!el){el=document.createElement('pre');el.id='zdbg';
+    el.style.cssText='position:fixed;left:12px;top:64px;z-index:40;margin:0;padding:.5em .7em;font:11px/1.5 ui-monospace,Menlo,monospace;color:#cfe0ff;background:rgba(8,11,30,.78);border:1px solid #22304d;border-radius:8px;pointer-events:none;display:none;white-space:pre';
+    document.body.appendChild(el);}
+  return el;}
+const HITX=[]; /*UI-MOD: display hit registry (gallery frames, video screens, ...)*/
+window.ZDOME_HIT=e=>HITX.push(e);
 let popPinned=false;
 function hitAt(cx2,cy2){
   if(!ok3d)return null;
   for(const wm of worldMeshes){                      // Moon / Mars habitat domes
     if(!wm.w.habitat)continue;
-    const s2=wm.center.clone().project(camera.clone());
+    const s2=wm.center.clone().applyAxisAngle(new THREE.Vector3(0,1,0),WG?WG.rotation.y:0).project(camera.clone()); /*WORLD-MOD*/
     if(s2.z>1)continue;
     const sx=(s2.x*0.5+0.5)*innerWidth, sy=(-s2.y*0.5+0.5)*innerHeight;
     if(Math.hypot(cx2-sx,cy2-sy)<Math.max(44,innerWidth*0.06))
@@ -1974,8 +2061,13 @@ function hitAt(cx2,cy2){
     const w=rotY(p.v),s=w.project(camera.clone());
     const sx=(s.x*0.5+0.5)*innerWidth, sy=(-s.y*0.5+0.5)*innerHeight;
     if(s.z<1&&Math.hypot(cx2-sx,cy2-sy)<Math.max(38,innerWidth*0.045))
-      return {kind:'ped',name:p.name,sub:ART_SUB[p.name],sx,sy};
+      return {kind:'ped',name:p.name,sub:Object.assign({},ART_SUB,CFG.exhibitSubs||{})[p.name],sx,sy}; /*ZDOME-SEAM:exhibitSubs*/
   }
+  for(const hx of HITX){ /*UI-MOD: registered display hits*/
+    const w3=rotY(hx.v.clone()),s3=w3.project(camera.clone());
+    const sx=(s3.x*0.5+0.5)*innerWidth, sy=(-s3.y*0.5+0.5)*innerHeight;
+    if(s3.z<1&&Math.hypot(cx2-sx,cy2-sy)<(hx.r||40))
+      return {kind:'x',name:hx.name,sub:hx.sub,sx,sy,act:hx.act,actLabel:hx.actLabel};}
   for(const v of cols3d){
     const w=rotY(v),s=w.project(camera.clone());
     const sx=(s.x*0.5+0.5)*innerWidth, sy=(-s.y*0.5+0.5)*innerHeight;
@@ -1987,11 +2079,12 @@ function hitAt(cx2,cy2){
 function showPop(hit){
   const el=pop();
   el.innerHTML=`<b>${hit.name}</b><span class="s2">${hit.sub}</span>
-    <button>${hit.kind==='frac'?'◈ Open the fractal':
-               hit.kind==='world'?(PILOT?'▲ Launch':'⟡ Seed AI'):'⟡ Seed AI'}</button>`;
+    <button>${hit.kind==='x'?(hit.actLabel||'Open'):hit.kind==='frac'?'◈ Open the fractal':
+               hit.kind==='world'?(PILOT?'▲ Launch':'⟡ Seed AI'):'⟡ Seed AI'}</button>`; /*UI-MOD*/
   el.querySelector('button').onclick=()=>
+    hit.kind==='x'?(hit.act&&hit.act()):
     hit.kind==='frac'?openFractal():
-    hit.kind==='world'?launchTo(hit.id):seed(hit.name,hit.sub);
+    hit.kind==='world'?launchTo(hit.id):seed(hit.name,hit.sub); /*UI-MOD*/
   el.style.left=hit.sx+'px';el.style.top=(hit.sy-24)+'px';el.style.display='block';
 }
 addEventListener('pointermove',ev=>{
@@ -2195,6 +2288,7 @@ function frame(t){
     yaw  += (yawT-yaw)  *(Q.dragging?0.45:0.12);
     pitch+= (pitchT-pitch)*(Q.dragging?0.45:0.12);
     G.rotation.y=yaw;G.rotation.x=pitch;
+    if(WG&&ZONE==='dome'&&!TRANSIT)WG.rotation.y=yaw; /*WORLD-MOD: the planet below turns with the dome*/
   }
 
   /* the sky is a slow instrument: redraw on its own clock, and NEVER while dragging */
@@ -2206,7 +2300,13 @@ function frame(t){
   const dt=t-lastT;lastT=t;
   if(dt>Q.budget+14){slow++;if(slow>18){downgrade();slow=0;}}else if(slow>0)slow--;
   if(!STILL)requestAnimationFrame(frame);
-  else{renderer&&renderer.render(scene,camera);projectUI()}
+  else{renderer&&renderer.render(scene,camera);projectUI();
+    if(S.debug&&(!frame._db||t-frame._db>200)){frame._db=t; /*UI-MOD*/
+      const d2=window.ZDOME_DRONE||{};
+      __dbg().textContent='zone '+ZONE+' · emb '+EMB+' · cam '+S.cam+' · hallYaw '+yaw.toFixed(2)
+        +'\nF '+(F?('x '+F.x.toFixed(2)+' y '+F.y.toFixed(2)+' z '+F.z.toFixed(2)+' yaw '+F.yaw.toFixed(2)+' thr '+F.thr.toFixed(2)):'—')
+        +'\nv '+(F?(F.vx.toFixed(2)+' '+F.vy.toFixed(2)+' '+F.vz.toFixed(2)):'—')+' · gravity '+(S.gravity?'ON':'hold')
+        +'\nsens y/p/r '+S.sYaw+'/'+S.sPitch+'/'+S.sRoll+' · emit '+(d2.t?new Date(d2.t).toISOString().slice(11,19):'—');}}
 }
 function drawNebula(t,W,H,warp,lorA){
   og.clearRect(0,0,W,H);
@@ -2300,12 +2400,16 @@ function buildSettings(){
      <option value="pilot">I fly it</option></select></label>
    <label>Mouse as stick <input type="checkbox" id="sMs"></label>
    <label>Gravity <input type="checkbox" id="sGr"></label> <!--FLIGHT-MOD-->
+   <label>Yaw rate <input type="range" id="sSy" min="0.1" max="2" step="0.05"></label>
+   <label>Pitch sens <input type="range" id="sSp" min="0.2" max="2" step="0.05"></label>
+   <label>Roll sens <input type="range" id="sSr" min="0.2" max="2" step="0.05"></label> <!--FLIGHT-MOD: sensitivities-->
    <label>Camera <select id="sCam">
      <option value="interior">Interior</option><option value="orbit">Orbit</option>
      <option value="follow">Follow drone</option><option value="fpv">FPV</option>
      <option value="bottom">From below</option></select></label>
    <h3>Presence</h3>
    <label>VR split-screen <input type="checkbox" id="sVr"></label>
+   <label>Debug overlay <input type="checkbox" id="sDb"></label> <!--UI-MOD-->
    <h3>Performance</h3>
    <label>Render scale <select id="sDpr">
      <option value="0.9">Fast</option><option value="1.15">Balanced</option>
@@ -2316,7 +2420,8 @@ function buildSettings(){
   const q=id=>el.querySelector(id)||{style:{},options:[],addEventListener(){}};
   q('#sDen').value=String(S.density);q('#sGl').checked=S.glints;
   q('#sMe').checked=S.meteors;q('#sDr').value=S.droneMode||(S.drone?'auto':'off');
-  q('#sMs').checked=!!S.mouseStick;q('#sGr').checked=!!S.gravity; /*FLIGHT-MOD*/
+  q('#sMs').checked=!!S.mouseStick;
+  q('#sGr').checked=!!S.gravity;q('#sSy').value=S.sYaw;q('#sSp').value=S.sPitch;q('#sSr').value=S.sRoll;q('#sDb').checked=!!S.debug; /*FLIGHT-MOD*/
   q('#sCam').value=S.cam;q('#sVr').checked=S.vr;
   const sync=()=>{const dis=q('#sDr').value==='off';
     for(const o of q('#sCam').options)
@@ -2330,16 +2435,20 @@ function buildSettings(){
     PILOT=S.droneMode==='pilot';
     if(drone)drone.visible=S.drone;
     setEmbodiment(EMB);
-    if(PILOT){F=flightInit();ZONE='dome';BND=boundsFor('dome',ZP);setEmbodiment('quad');
+    if(PILOT){F=__spawn();setEmbodiment('quad'); /*ZDOME-SEAM:spawn*/
       if(!['follow','fpv','bottom'].includes(S.cam)){S.cam='follow';q('#sCam').value='follow'}
-      hudMsg(S.gravity?'armed · W/S throttle · A/D yaw · arrows pitch+roll · R reset':'armed · W/S climb (altitude holds) · A/D yaw · arrows pitch+roll · R reset · gravity: settings'); /*FLIGHT-MOD*/}
+      hudMsg(S.gravity?'armed · W/S throttle · A/D yaw · arrows pitch+roll · R reset':'armed · W/S climb (altitude holds) · A/D yaw · arrows pitch+roll · R reset'); /*FLIGHT-MOD*/}
     if(!S.drone&&['follow','fpv','bottom'].includes(S.cam)){S.cam='interior';q('#sCam').value='interior'}
     showFlightUI();
     sync();saveS()};
   q('#sMs').onchange=e=>{S.mouseStick=e.target.checked;mouseOn=S.mouseStick;saveS()};
   q('#sGr').onchange=e=>{S.gravity=e.target.checked;saveS();hudMsg(S.gravity?'gravity ON — ballistic physics':'gravity OFF — altitude hold')}; /*FLIGHT-MOD*/
+  q('#sSy').oninput=e=>{S.sYaw=+e.target.value;saveS()};
+  q('#sSp').oninput=e=>{S.sPitch=+e.target.value;saveS()};
+  q('#sSr').oninput=e=>{S.sRoll=+e.target.value;saveS()}; /*FLIGHT-MOD*/
   q('#sCam').onchange=e=>{S.cam=e.target.value;showFlightUI();saveS()};
   q('#sVr').onchange=e=>{S.vr=e.target.checked;saveS()};
+  q('#sDb').onchange=e=>{S.debug=e.target.checked;saveS();__dbg().style.display=S.debug?'block':'none'}; /*UI-MOD*/
   q('#sDpr').onchange=e=>{S.dpr=+e.target.value;Q.dpr=S.dpr;Q.tier=0;applyDPR();saveS()};
   q('#sHz').onchange=e=>{S.hz=+e.target.value;Q.nebulaHz=S.hz;Q.tier=0;saveS()};
 }
@@ -2348,9 +2457,12 @@ if(setBtnEl)setBtnEl.onclick=()=>{
   const p=document.getElementById('settings');if(p)p.classList.toggle('on');};
 
 /* ---------- boot ---------- */
+let __bootRan=false;
+function __boot(){if(__bootRan)return;__bootRan=true; /*ZDOME-SEAM:configfile — boot deferred until the config file merges*/
+__worldsCfg();F=__spawn(); /*ZDOME-SEAM:spawn — pure state, set before initGL so it holds even if WebGL fails*/
 sizeNebula();initGL();buildSettings();
 const $=id=>document.getElementById(id);
-function showFlightUI(){
+window.showFlightUI=function(){ /*UI-MOD: global so settings handlers resolve it post-wrap*/
   const touch=matchMedia('(hover:none)').matches;
   if($('hud'))    $('hud').style.display=PILOT?'block':'none';
   if($('horizon'))$('horizon').style.display=(PILOT&&S.cam==='fpv')?'block':'none';
@@ -2390,6 +2502,16 @@ addEventListener('resize',()=>{sizeNebula();
   if(ok3d){applyDPR();camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()}});
 /* the 3D→2D→3D fix: once the 4s intro fade completes, scroll opacity answers instantly */
 setTimeout(()=>document.getElementById('gl').classList.add('in'),STILL?0:1800);
+__content();
+}
+;(function(){ /*ZDOME-SEAM:configfile*/
+  const merge=(a,b)=>{for(const k in b){const v=b[k];
+    if(v&&typeof v==='object'&&!Array.isArray(v)&&a[k]&&typeof a[k]==='object'&&!Array.isArray(a[k]))merge(a[k],v);
+    else a[k]=v;}};
+  const u=CFG.configUrl===undefined?'dome.config.json':CFG.configUrl;
+  (u?fetch(u,{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({})):Promise.resolve({}))
+   .then(fc=>{merge(CFG,fc||{});try{__boot()}catch(e){console.error('zdome boot',e)}});
+})();
 setTimeout(()=>{document.getElementById('gl').style.transition='opacity .25s linear'},STILL?300:6200);
 let interacted=false;
 for(const ev of['wheel','touchstart','keydown'])
@@ -2408,32 +2530,35 @@ async function seed(id,caption){
   const t2=document.getElementById('toast');t2.classList.add('on');
   setTimeout(()=>t2.classList.remove('on'),1900);
 }
-const DOMAINS=CFG.domains/*ZDOME-SEAM:domains*/||[["Artificial Intelligence","Consciousness-aligned intelligence systems for collective good."],
+const DOMAINS=[["Artificial Intelligence","Consciousness-aligned intelligence systems for collective good."],
  ["Language","Universal expression across languages, scripts and cultures."],
  ["Health","Preventive, affordable and personalized health for all."],
  ["Knowledge","Preservation, synthesis and evolution of human knowledge."],
  ["Identity","Sovereign identity with continuity, privacy and dignity."],
  ["Education","Lifelong learning through adaptive, inclusive systems."],
  ["Governance","Ethical, transparent and participatory decision frameworks."]];
-document.getElementById('domains').innerHTML=DOMAINS.map(([b,p])=>
+function __content(){ /*ZDOME-SEAM:domains — below-fold content honours the config*/
+const _DOM=CFG.domains||DOMAINS;
+document.getElementById('domains').innerHTML=_DOM.map(([b,p])=>
  `<div class="dom"><b>${b}</b><p>${p}</p></div>`).join('');
-const MARK=CFG.marks/*ZDOME-SEAM:marks*/||{
+const MARK={
  kaivalya:'<circle cx="43" cy="43" r="30"/><ellipse cx="43" cy="43" rx="30" ry="12"/><ellipse cx="43" cy="43" rx="12" ry="30"/><circle cx="43" cy="43" r="5"/>',
  pratik:'<path d="M23 33 43 23 63 33 63 53 43 63 23 53 Z"/><path d="M23 33 43 43 63 33 M43 43 43 63"/><path d="M33 28 53 38 M33 58 53 48"/>',
  triad:'<circle cx="34" cy="36" r="15"/><circle cx="52" cy="36" r="15"/><circle cx="43" cy="52" r="15"/>',
  hgl:'<rect x="22" y="30" width="18" height="14"/><rect x="46" y="30" width="18" height="14"/><rect x="22" y="50" width="18" height="14"/><rect x="46" y="50" width="18" height="14"/><path d="M28 30 v-5 h6 M52 30 v-5 h6"/>',
  zist:'<path d="M20 60 A26 26 0 0 1 66 60 Z"/><path d="M30 60 38 44 46 60 M46 60 54 50 62 60"/><circle cx="43" cy="30" r="3"/>'};
-const ART=CFG.art/*ZDOME-SEAM:art*/||[["Kaivalya AGI","kaivalya","Pursuing truth, well-being and wisdom."],
+const ART=[["Kaivalya AGI","kaivalya","Pursuing truth, well-being and wisdom."],
  ["PRATIK","pratik","Participatory Recursive Adaptive Trans-Intelligence Kernels."],
  ["Aye Triad Living Loop","triad","A self-evolving loop of observation, synthesis and global feedback."],
  ["Holy Grail Laboratory","hgl","A multi-suitcase research laboratory for civilization-scale problems."],
  ["Zistgah","zist","The living habitat — integrating technology, nature and humanity."]];
-document.getElementById('exhibits').innerHTML=ART.map(([b,m,p],i)=>
- `<article class="ex"><svg viewBox="0 0 86 86" aria-hidden="true">${MARK[m]}</svg>
+const _MARK=Object.assign({},MARK,CFG.marks||{}),_ART=CFG.art||ART; /*ZDOME-SEAM:marks,art*/
+document.getElementById('exhibits').innerHTML=_ART.map(([b,m,p],i)=>
+ `<article class="ex"><svg viewBox="0 0 86 86" aria-hidden="true">${_MARK[m]||''}</svg>
   <b>${b}</b><p>${p}</p><button class="seed" data-i="${i}">⟡ Seed AI</button></article>`).join('');
 document.querySelectorAll('.seed').forEach(btn=>btn.onclick=()=>{
-  const [b,,p]=ART[+btn.dataset.i];seed(b,p);});
-const THREADS=CFG.threads/*ZDOME-SEAM:threads*/||[
+  const [b,,p]=_ART[+btn.dataset.i];seed(b,p);});
+const THREADS=[
  ["ILM — the Linguistic Operating System",
   "Integrative Linguistic Multiscripting: one reversible identity layer across 68 writing systems, generalizing the Hindawi Programming System (public release 15 August 2004) and the Romenagri transliteration framework (GPL, 2003).",
   [["ilm.codes","https://ilm.codes"],["hindawiai on GitHub","https://github.com/hindawiai"],["project-ilm on GitHub","https://github.com/project-ilm"]]],
@@ -2449,9 +2574,11 @@ const THREADS=CFG.threads/*ZDOME-SEAM:threads*/||[
  ["Misty DOI — the publication rail",
   "Research workflows as code: metadata, packaging, DOI minting and timestamp proofs, automated end to end.",
   [["misty-doi (DOI)","https://doi.org/10.5281/zenodo.20719388"],["VGC methodology paper","https://doi.org/10.5281/zenodo.21264248"]]]];
-document.getElementById('threads').innerHTML=THREADS.map(([b,p,links])=>
+const _THR=CFG.threads||THREADS; /*ZDOME-SEAM:threads*/
+document.getElementById('threads').innerHTML=_THR.map(([b,p,links])=>
  `<div class="thread"><b>${b}</b><p>${p}</p><div class="links">${
    links.map(([t,u])=>`<a href="${u}" rel="noopener">${t} →</a>`).join('')}</div></div>`).join('');
+} /* end __content */
 </script><script>
 /* PWA layer — © 1993–2026 Abhishek Choudhary · AyeAI · model: Claude Opus 4.8 */
 if('serviceWorker' in navigator)

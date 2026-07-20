@@ -7,6 +7,33 @@ represented by **UN ISIC · ILO ISCO · UNESCO ISCED**. UKOP is the blueprint; F
 **Live:** zistgah.org/fakir/ — the dome IS the front door (`index.html` at the repo root; `docs/` and `explore/` removed)
 **DOI (software):** `10.5281/zenodo.21436550` · **DOI (poster corpus):** `10.5281/zenodo.21436552`
 
+## v0.7 — clickable ceiling cluster · config files · worlds ×N · the dome repo
+
+- **Click-to-seed restored, provably.** Root cause: `#gl` is `pointer-events:none` by
+  design — the dome picks via window-level projection, so v0.6's canvas handlers could
+  never fire. The point cloud now listens at window level like the dome itself; the
+  jsdom oracle synthesises the click and the seeded point lands **2.4 px under the
+  cursor**. Points are small (0.055) and cluster beneath the oculus (band ≈ 4.1–6.6).
+- **Config files for third parties.** `dome.config.json` drives content, pillar and
+  exhibit names, the **worlds** (per-world gravity; `kind:"station"`; Mahtab 0.165 /
+  Bahram 0.38 patched; Ceres 0.029 and Orbital Station A1 added — names pending the
+  owner's ruling), the cinematic **spawn** (`space`, `[0,20,26]`, facing the dome), the
+  floor **gallery** rotating the 11-poster corpus, and **video** screens (overlay
+  player). Functions (`onPick`, `tip`) stay in the page script; JSON and JS deep-merge.
+- **Flight**: yaw slowed (0.45×) with yaw/pitch/roll sensitivity sliders; **roll is
+  thrust-vectored** (tilt right → go right); altitude hold verified at 20.000; per-world
+  gravity verified (Ceres climbs at thr 0.2 — correct: hover ≈ 0.018 there); a **10 Hz
+  `zdome:drone` emitter** (`window.ZDOME_DRONE`) opens the road to many pilots in one
+  dome; ⚙ debug overlay shows the live variables.
+- **One entity, one place.** The chakra dial + oculus jewels ride the hall group; the
+  planet below turns with the dome, and the yaw is baked into the pilot frame at oculus
+  escape (`F′=R(−yaw)F`) so world physics stay exact. Boundary stars spread across a
+  deep 70–160 shell.
+- **The dome has its own home**: **github.com/zistgah/dome** — lib, scaffold, example
+  config, demo, and six documents including `docs/PROCESS.md`, the record of the
+  engineering practice used here. `vendor/zistgah-dome/dome.js` in this repo is that
+  exact artefact.
+
 ## v0.6 — a true point cloud, three seeding dimensions, altitude hold
 
 - **The cloud, not rings.** Every one of the 9,350 points is individually scattered — the
