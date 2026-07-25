@@ -849,13 +849,41 @@ function ilmCode(v){const m=/\(([A-Za-z0-9]{2,4})\)/.exec(v);return m?m[1]:(v.tr
 /* FKCLOUD-v2 now lives in the dome lib (ZDOME_BUILD.pointcloud); the app supplies data + callbacks. */
 window.FAKIR_DISPLAY={highlight:m=>{window.ZDOME_POINTCLOUD&&window.ZDOME_POINTCLOUD.highlight(m);},tick:()=>{}};
 
+/* ---- v2: ILM cloud data — reshaped into the shape ZDOME_BUILD.pointcloud already
+   expects, so the SAME shared builder renders it. No second cloud implementation. ---- */
+function ilmCloudData(){
+  const FAMS=[{id:"SCRIPT",label:"ISO 15924 scripts",hue:280,levels:["Script"],counts:[1]},
+              {id:"LANG",label:"ISO 639-3 languages",hue:150,levels:["Language"],counts:[1]}];
+  const nodes=ILM_ITEMS.map(it=>({f:it.kind.indexOf("script")===0?"SCRIPT":"LANG",
+    code:it.code,name:it.name,level:1,parent:null}));
+  return {families:FAMS,layers:[{id:"ILM",name:"ILM registry"}],nodes};
+}
+function setSeedLanguage(n){
+  const el=document.getElementById("fkpLang");
+  if(el){el.value=n.name+" ("+n.code+")";
+    if(document.getElementById("fkpanel").style.display==="block")el.focus();}
+  if(window.ZDBG)ZDBG("ilm.pick",n.code);
+}
+
 /* ---------------- shared-dome configuration ---------------- */
 window.ZISTGAH_DOME={
   displays:[{type:"pointcloud",data:FAKIR,yBase:4.3,ySpan:2.1,size:0.055,pick:0.075,
+    onPickLayer:(id,name)=>selectLayer(id,name),   /* v2: AGI pillar band clicked */
     onPick:(n,l)=>openPanel(n,l),
-    tip:(m,lin)=>`<b>${m.n.f} ${m.n.code}</b> × <b>${m.layer}</b><br>${lin}<br><span style="color:#9fd8c9">click → seed layer × domain × language</span>`}],
+    tip:(m,lin)=>`<b>${m.n.f} ${m.n.code}</b> × <b>${m.layer}</b><br>${lin}<br><span style="color:#9fd8c9">click → seed layer × domain × language</span>`},
+    /* v2: the ILM cloud — its own vertical band (6.8–7.7) so it never collides with
+       the FAKIR cloud's 4.3–6.4; axis:false because one layer needs no axis line. */
+    {type:"pointcloud",data:ilmCloudData(),yBase:6.8,ySpan:0.9,size:0.05,pick:0.075,axis:false,
+      onPick:(n)=>setSeedLanguage(n),
+      tip:(m)=>"<b>"+m.n.name+"</b> <span style=\"opacity:.7\">"+(m.n.f==="SCRIPT"?"script":"language")+"</span><br><span style=\"color:#9fd8c9\">click → set the seeding language</span>"}],
   /* domains · marks · art · threads · gallery · worlds · flight → dome.config.json */
 };
+/* v2: AGI layer selected from the pillar — pre-arms the layer the panel will open with */
+let selLayer=null;
+function selectLayer(id,name){selLayer=id;
+  const el=document.getElementById("fkpLayer");if(el)el.value=id;
+  hudMsg&&hudMsg("AGI layer · "+id+" — "+name);
+  if(window.ZDBG)ZDBG("agi.layer",id);}
 
 /* ---------------- seeding: AGI layer × domain × language ---------------- */
 let sel=null;
@@ -1582,12 +1610,21 @@ ZDOME_BUILD.pointcloud=function(spec,api){
     const mid=acc+(Math.PI/44)+span/2,lab=sprite(f.id,40,`hsl(${f.hue} 70% 62%)`,60);
     lab.position.set(Math.cos(mid)*(rhMax(Y0)+0.6),Y0-0.35,Math.sin(mid)*(rhMax(Y0)+0.6));G.add(lab);
     acc+=span+(Math.PI/22);});
+  const pillarPicks=[];
   if(spec.axis!==false){
     G.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(
       [new THREE.Vector3(0,Y0-0.25,0),new THREE.Vector3(0,Y0+SPAN+0.25,0)]),
       new THREE.LineBasicMaterial({color:0x3a4680,transparent:true,opacity:.8})));
+    /* v2: the AGI stack becomes a PILLAR you can click. The labels already existed;
+       what was missing was a body to hit. One band per layer, registered for picking. */
+    const bandH=SPAN/Math.max(1,LAYERS.length)*0.78;
     LAYERS.forEach((l,i)=>{const lab=sprite(l.id,20,"#8b93a7",62);
-      lab.position.set(0.42,yOf(i)+0.04,0);G.add(lab);});}
+      lab.position.set(0.42,yOf(i)+0.04,0);G.add(lab);
+      const band=new THREE.Mesh(new THREE.CylinderGeometry(0.17,0.17,bandH,12),
+        new THREE.MeshBasicMaterial({color:(i%2?0x46538f:0x3a4680),transparent:true,opacity:.30}));
+      band.position.set(0,yOf(i),0);
+      band.userData.layer={id:l.id,name:l.name};
+      G.add(band);pillarPicks.push(band);});}
   const posOf=(k,li)=>{const nd=LEAVES[k],f=nd.f,i=famIdx[f+"|"+nd.code];
     const ang=famBase[f]+famSpan[f]*((i+.5)/famN[f])+(((k*7)%13)/13-.5)*0.07;
     const y=yOf(li)+(((k*11+li*3)%9)/9-.5)*0.30;
@@ -1648,6 +1685,16 @@ ZDOME_BUILD.pointcloud=function(spec,api){
     ray.setFromCamera(ndc,camera);
     const h=ray.intersectObjects(picks)[0];
     return h?h.object.userData.meta[h.index]:null;};
+  /* v2: pillar bands are Meshes, not Points — they need their own cast (Points
+     threshold on the raycaster does not apply to mesh geometry). */
+  const castLayer=e=>{if(!pillarPicks.length)return null;
+    const cv=api.renderer&&api.renderer.domElement;if(!cv)return null;
+    const r=cv.getBoundingClientRect?cv.getBoundingClientRect():{left:0,top:0,width:innerWidth,height:innerHeight};
+    ndc.x=((e.clientX-r.left)/(r.width||innerWidth))*2-1;
+    ndc.y=-((e.clientY-r.top)/(r.height||innerHeight))*2+1;
+    ray.setFromCamera(ndc,camera);
+    const h=ray.intersectObjects(pillarPicks)[0];
+    return h?h.object.userData.layer:null;};
   let dxy=0,down=null;
   addEventListener("pointerdown",e=>{if(e.target.closest&&e.target.closest(GUARD))return;
     down=[e.clientX,e.clientY];dxy=0;});
@@ -1658,12 +1705,17 @@ ZDOME_BUILD.pointcloud=function(spec,api){
     if(m){tipEl.style.display="block";tipEl.style.left=(e.clientX+14)+"px";tipEl.style.top=(e.clientY+10)+"px";
       const lin=lineage(m.n).map(x=>x.name).join(" › ");
       tipEl.innerHTML=spec.tip?spec.tip(m,lin):("<b>"+m.n.f+" "+m.n.code+"</b> × <b>"+m.layer+"</b><br>"+lin);}
-    else tipEl.style.display="none";},{passive:true});
+    else{const L=castLayer(e);                      /* v2: pillar hover */
+      if(L){tipEl.style.display="block";tipEl.style.left=(e.clientX+14)+"px";tipEl.style.top=(e.clientY+10)+"px";
+        tipEl.innerHTML="<b>"+L.id+"</b> — "+L.name+"<br><span style=\"color:#9fd8c9\">click → select this AGI layer</span>";}
+      else tipEl.style.display="none";}},{passive:true});
   addEventListener("pointerup",e=>{const was=down;down=null;
     if(!was||dxy>7)return;
     if(scrollY>innerHeight*0.4)return;
     if(e.target.closest&&e.target.closest(GUARD))return;
-    const m=cast(e);if(m&&spec.onPick)spec.onPick(m.n,m.layer);});
+    const m=cast(e);if(m&&spec.onPick){spec.onPick(m.n,m.layer);return;}
+    const L=castLayer(e);                            /* v2: pillar click */
+    if(L&&spec.onPickLayer)spec.onPickLayer(L.id,L.name);});
   addEventListener("scroll",()=>{tipEl.style.display="none";},{passive:true});
 };
 ZDOME_BUILD.gallery=function(spec,api){
@@ -1820,6 +1872,36 @@ function __spawn(){ /*ZDOME-SEAM:spawn — cinematic start at a distance by defa
 function flightInit(){
   return {x:0,y:2.2,z:3.4, vx:0,vy:0,vz:0, yaw:Math.PI, pitch:0, roll:0, thr:0.5, armed:true};
 }
+/* ===================== v2: THE CINEMATIC ENTRANCE =====================
+   Not a new camera system — it arms the SAME TRANSIT arc launchTo() already
+   flies, so placeCamera() animates it and embodimentOn() performs the
+   rocket → quad handover exactly as an inter-world arrival does.
+   TWO legs, because one will not do: ZP.transit.arcLift is 38, tuned for
+   interplanetary hops, and a single lifted arc plunges through the glass
+   shell instead of the oculus. Leg 1 crosses to a gate directly above the
+   oculus, staying above the dome the whole way. Leg 2 drops through the
+   oculus — the same eye of the needle escaped() uses on the way out.
+   Disable with dome.config.json → flight.cinematicEntry:false          */
+function __armEntryLeg(leg){
+  const to=leg.to, lift=leg.lift||0;
+  const plan=transitPlan([F.x,F.y,F.z],to,ZP);
+  /* override the interplanetary apex with a leg-local lift */
+  plan.mid=[(F.x+to[0])/2, (leg.lift!=null?Math.max(F.y,to[1])+lift:(F.y+to[1])/2), (F.z+to[2])/2];
+  plan.dur=Math.max(1.6,plan.d*(leg.spu||0.16));
+  setEmbodiment('rocket');
+  TRANSIT={plan,u:0,dest:leg.dest,label:leg.label,at:to,next:leg.next||null};
+  hudMsg(leg.label+' · '+plan.dur.toFixed(0)+' s');
+}
+function __cinematicEntry(){
+  if(!PILOT||!F)return;
+  const cfg=(CFG.flight&&CFG.flight.cinematicEntry);
+  if(cfg===false)return;
+  const inside=[0,2.2,3.4];                            /* flightInit's interior pose */
+  if(Math.hypot(F.x-inside[0],F.y-inside[1],F.z-inside[2])<2)return; /* already in */
+  const gate=[0,ZP.dome.ocuY+1.4,0];                   /* squarely above the oculus */
+  __armEntryLeg({to:gate,lift:2.0,dest:'space',label:'approach · the oculus',spu:0.16,
+    next:{to:inside,lift:null,dest:'dome',label:'descent · into the hall',spu:0.30}});
+}
 function flightStep(F,u,dt,B,EMB){
   dt=Math.min(dt,0.05);
   const E=ZP.embodiments[EMB||'quad'];
@@ -1945,12 +2027,19 @@ function placeCamera(t,time){
         if(fl)fl.scale.setScalar(0.7+0.5*Math.sin(time*0.02));
         hudMsg('TRANSIT · '+TRANSIT.label+' · '+Math.round(TRANSIT.u*100)+'%');
         if(TRANSIT.u>=1){                            /* arrival: the world dictates the body */
+          const lbl=TRANSIT.label, nx=TRANSIT.next, at=TRANSIT.at; /*v2: read before we null it*/
           ZONE=TRANSIT.dest; BND=boundsFor(ZONE,ZP);
           setEmbodiment(embodimentOn(ZONE,ZP));
           const w=ZP.worlds.find(x=>x.id===ZONE);
-          F=flightInit();F.x=w.at[0];F.z=w.at[2];F.y=w.at[1]+__surfY(w)+0.6; /*WORLD-MOD*/
+          F=flightInit();
+          /* v2 DEFECT FIX: 'dome' and 'space' carry no ZP.worlds record, so the old
+             unguarded w.at[0] threw a TypeError on any transit ending there — which
+             is precisely what the cinematic entrance must do. */
+          if(w){F.x=w.at[0];F.z=w.at[2];F.y=w.at[1]+__surfY(w)+0.6;} /*WORLD-MOD*/
+          else if(at){F.x=at[0];F.y=at[1];F.z=at[2];}   /*v2: land on the declared point*/
           TRANSIT=null;
-          hudMsg('arrived · '+w.label+' · '+ZP.embodiments[EMB].label);
+          if(nx)__armEntryLeg(nx);                     /*v2: chain the entrance legs*/
+          else hudMsg('arrived · '+(w?w.label:lbl)+' · '+ZP.embodiments[EMB].label);
         }
       }else{
         flightStep(F,readSticks(),dt,BND,EMB);
@@ -2460,6 +2549,7 @@ if(setBtnEl)setBtnEl.onclick=()=>{
 let __bootRan=false;
 function __boot(){if(__bootRan)return;__bootRan=true; /*ZDOME-SEAM:configfile — boot deferred until the config file merges*/
 __worldsCfg();F=__spawn(); /*ZDOME-SEAM:spawn — pure state, set before initGL so it holds even if WebGL fails*/
+__cinematicEntry(); /*ZDOME-SEAM:spawn — v2: fly the spawn point INTO the dome*/
 sizeNebula();initGL();buildSettings();
 const $=id=>document.getElementById(id);
 window.showFlightUI=function(){ /*UI-MOD: global so settings handlers resolve it post-wrap*/
