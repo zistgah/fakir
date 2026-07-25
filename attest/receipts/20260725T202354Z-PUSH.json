@@ -1,0 +1,19 @@
+{
+    "_type": "https://in-toto.io/Statement/v1",
+    "predicateType": "https://project-ilm.org/attestations/candor/v1",
+    "subject": [
+        {
+            "name": "zistgah/fakir",
+            "digest": {
+                "gitCommit": "dc90cca06223d6ddbfdcc6f1ff2144e67a2768c4"
+            }
+        }
+    ],
+    "predicate": {
+        "action": "PUSH",
+        "reason": "fix",
+        "utc": "20260725T202354Z",
+        "host": "ilm01-lin",
+        "note": "receipt written retrospectively by seal_fakir_v2.sh; the push it attests was made without one. Timestamp and reason are read from the commit, not supplied."
+    }
+}
