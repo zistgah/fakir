@@ -1,0 +1,18 @@
+{
+    "_type": "https://in-toto.io/Statement/v1",
+    "predicateType": "https://project-ilm.org/attestations/candor/v1",
+    "subject": [
+        {
+            "name": "zistgah/fakir.git",
+            "digest": {
+                "gitCommit": "c7af0e29c3f75111aa1f815b8b3555762de17f9a"
+            }
+        }
+    ],
+    "predicate": {
+        "action": "PUSH",
+        "reason": "updates",
+        "utc": "20260726T024509Z",
+        "host": "ilm01-lin"
+    }
+}
