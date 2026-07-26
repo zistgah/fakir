@@ -1,0 +1,89 @@
+{
+  "contract": "zistgah/project-ilm engineering contract",
+  "version": "2.0.0",
+  "authority": "Abhishek Choudhary (AyeAI). Rulings here are canon; a model never edits this file's rules, only reports violations.",
+  "copyright": "© 1993–2026 Abhishek Choudhary. All rights reserved.",
+  "why_executable": "A prose contract was already in this repo and was still missed: a push landed with no Candor receipt and a broken MANIFEST. Every rule below therefore has a check id enforced by ops/verify.sh, which exits non-zero. Rules that cannot be checked are marked advisory and are the known weak spots.",
+  "invariants": [
+    {
+      "id": "C1-manifest-verifies",
+      "rule": "MANIFEST.sha256 must verify against the working tree.",
+      "check": "sha256sum -c MANIFEST.sha256",
+      "broken_on": "2026-07-25 (index.html FAILED after an unsealed push)"
+    },
+    {
+      "id": "C2-manifest-complete",
+      "rule": "Every tracked file must appear in MANIFEST.sha256 except MANIFEST.sha256 itself and MANIFEST.sha256.ots (a manifest cannot contain the hash of its own proof). This implies a seal ORDER: write receipts, stamp them, THEN build the manifest, THEN stamp the manifest — so receipts and their proofs are covered.",
+      "check": "git ls-files vs manifest paths",
+      "broken_on": "2026-07-25 (7 tracked files absent, including the new v1/*)",
+      "found_by_building_the_checker": "seal_fakir_v2.sh built the manifest before stamping, so the receipt's .ots landed outside it. Order corrected in ops/candor.sh."
+    },
+    {
+      "id": "C3-receipt-per-commit",
+      "rule": "Every substantive commit must have a Candor receipt naming its gitCommit. Sealing commits (subject 'attest:*') are exempt — a seal attests the commit before it, so attesting the seal is infinite regress. History before protocol_begins_at predates Candor and is exempt by declaration, not by silence.",
+      "check": "attest/receipts/*-PUSH.json subject digests vs rev-list",
+      "broken_on": "2026-07-25 (dc90cca unattested; chain stopped 20 Jul)",
+      "protocol_begins_at": "b6465cb"
+    },
+    {
+      "id": "C4-receipt-schema",
+      "rule": "A receipt is in-toto Statement v1 with predicateType https://project-ilm.org/attestations/candor/v1 and predicate {action,reason,utc,host}. reason may be empty ONLY if none was recorded; it is never invented.",
+      "check": "schema walk over every receipt"
+    },
+    {
+      "id": "C5-proofs-immutable",
+      "rule": "An existing .ots is never overwritten. Rotation is: copy manifest AND its .ots to attest/history/<UTC>-, then clear the root .ots so a fresh stamp can be made. No proof is destroyed because the old manifest stays paired with the proof that attests it.",
+      "check": "every attest/history/*-MANIFEST.sha256 has its .ots sibling"
+    },
+    {
+      "id": "C6-copyright",
+      "rule": "Copyright line '© 1993–2026 Abhishek Choudhary. All rights reserved.' on every artifact. Affiliation is AyeAI only; never 'Independent Researcher', never a past employer.",
+      "check": "grep over text artifacts",
+      "known_exception": "zistgah/poie carries © 2026 deliberately (Kaivalyik Immutabilis) — flagged, not corrected"
+    },
+    {
+      "id": "C7-no-fabrication",
+      "rule": "No invented metadata, dates, DOIs or proofs. A gap is reported, never filled.",
+      "check": "advisory — not mechanically checkable"
+    }
+  ],
+  "process": {
+    "id": "OST",
+    "rule": "One Step Trick: the canonical script performs EVERY step itself — clone, apply, verify, seal, receipt, stamp, commit, push, Pages, mint, DOI record-back. Never hand back a checklist; even printing 'run this next' is donkey work.",
+    "violations_2026_07_25": [
+      "answered three build asks with design documents instead of code",
+      "shipped a script that required him to already be inside a clone; it failed in ~/work/24jul",
+      "split sealing into a second script he had to remember to run"
+    ],
+    "script_shape": {
+      "runs_from": "any directory",
+      "clones_to": "./<repo> under $PWD — never climbs out of the executing folder",
+      "gate": "ONE typed assertion per run covering the whole run, never one per item",
+      "gate_words": [
+        "PUSH",
+        "PAGES",
+        "MINT"
+      ],
+      "gate_parsing": "tolerant: 'PUSH fix', 'PUSH, fix', 'PUSH: fix', lower case, extra spaces. The strict form cost four attempts at the gate on 2026-07-25.",
+      "gate_is_the_intent": "the typed word + reason IS the Candor intent; the same function that pushes must also write the receipt and reseal, so the seal cannot be forgotten",
+      "long_waits": "announced — OTS calendar waits are silent for tens of seconds and echo keystrokes; unannounced this reads as breakage",
+      "deliverable": "apply_X.sh + X.tar.gz beside it, both e2e-rehearsed before he sees them"
+    }
+  },
+  "verification": {
+    "rule": "Verify by execution, never by assertion. Behavioural oracle over real extracted code, then a mutation suite proving the oracle bites.",
+    "learned_2026_07_25": "mutation testing exposed 4 oracle assertions that hardcoded geometry instead of parsing it from the artifact under test — they passed no matter what the file said. An oracle that does not read the artifact is not a test."
+  },
+  "retrieval": {
+    "rule": "Before modifying anything, retrieve the actual live state. Never assume, never reinvent.",
+    "cost_2026_07_25": "wrote a design document for a multi-world vehicle system (launchTo/TRANSIT/embodimentOn) that already existed and shipped in v1.0; also worked from a v0.7 baseline when live was v1.0.",
+    "fix": "ops/resume.sh emits RESUME.md — live HEAD, version, chain status, feature census — so a fresh session reads one file instead of a dozen retrieval calls."
+  },
+  "routing": {
+    "claude": "kernel correctness, deep audits, verification harnesses",
+    "chatgpt_gemini": "generation, normalisation, copy, documentation, and the push for doc-only work",
+    "human_only": "canon rulings, ontology definitions, tradition defaults, naming, icons and visual/creative work",
+    "fable": "reserved — final architecture, papers, patents, monetisation, legal safety. Nothing groundwork.",
+    "never_ai": "pushing and minting. The seeded script executes those under his typed assertion, on his machine."
+  }
+}
