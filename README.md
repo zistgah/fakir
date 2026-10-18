@@ -98,3 +98,11 @@ Eleven UKOP · FAKIR · Kaivalyik posters, one deposit (`10.5281/zenodo.21436552
 
 **Author:** Abhishek Choudhary · **Affiliation:** AyeAI · ORCID 0009-0002-0684-8320
 © 1993–2026 Abhishek Choudhary. All rights reserved. · Built with Claude Fable 5 (Anthropic).
+
+<!-- trademarks:begin -->
+---
+AyeAI®, AyeCNSe® and AyeAM® are registered trademarks of Abhishek Choudhary in India, used and claimed worldwide since
+2019. The names of his products and projects are his trademarks; see [legal/TRADEMARKS.md](legal/TRADEMARKS.md). Code
+licences in this repository grant copyright permissions only and no right in any mark.
+© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI.
+<!-- trademarks:end -->
